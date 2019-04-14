@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { MatToolbar } from '@angular/material/toolbar';
+import { Superhero } from './superheroes-material-design/superhero-profile/superhero-profile.component';
 
 @Component({
   selector: 'app-root',
@@ -7,5 +8,8 @@ import { MatToolbar } from '@angular/material/toolbar';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Super Heroes';
+
+  printSuperhero(hero: Superhero){
+    console.log(hero);
+  }
 }

@@ -1,3 +1,10 @@
-<mat-card>
-  Superhero profile.
+<mat-card class="custom-style">
+  <h2>{{name}}</h2>
+  <div>Appeared in the year {{firstAppearance}}</div>
+  <div>Lives in {{livesIn}}</div>
+
+  <button (click)="returnSuperheroData()"> Fly with a Superhero</button>
+  <!-- <hr /> -->
+  <!-- <superhero-profile-footer></superhero-profile-footer> -->
+  <!-- <ng-content></ng-content> -->
 </mat-card>

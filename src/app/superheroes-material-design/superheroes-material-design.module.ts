@@ -6,12 +6,14 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatCardModule} from '@angular/material/card';
 import { SuperheroProfileComponent } from './superhero-profile/superhero-profile.component';
 import { SuperheroToolbarComponent } from './superhero-toolbar/superhero-toolbar.component';
-
+import HitCounter from './utilities/hit-counter';
+import { SuperheroProfileFooterComponent } from './superhero-profile-footer/superhero-profile-footer.component';
 
 @NgModule({
   declarations: [
     SuperheroProfileComponent, 
-    SuperheroToolbarComponent
+    SuperheroToolbarComponent, 
+    SuperheroProfileFooterComponent, 
   ],
   imports: [
     BrowserAnimationsModule, 
@@ -20,7 +22,9 @@ import { SuperheroToolbarComponent } from './superhero-toolbar/superhero-toolbar
   ],
   exports: [
     SuperheroProfileComponent,
-    SuperheroToolbarComponent
-  ]
+    SuperheroToolbarComponent,
+    SuperheroProfileFooterComponent
+  ],
+  providers:[HitCounter]
 })
 export class SuperheroesMaterialDesignModule { }

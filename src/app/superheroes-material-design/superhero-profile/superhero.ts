@@ -20,14 +20,16 @@ const superheroes = [
 
 export default superheroes;
 
-function filterSuperhero(name: string){
-    return superheroes.filter( x => x.name === name);
+function filterSuperhero(name: string): any{
+    return superheroes.find( x => x.name === name);
 }
 
 export function getSuperheroLocation(name: string): string{
     return filterSuperhero(name).livesIn;
 }
 
-export function getSuperheroCreators(name: string): string{
+function getSuperheroCreators(name: string): Array<string>{
     return filterSuperhero(name).creators;
 }
+
+export  {getSuperheroCreators};
