@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, OnChanges, SimpleChanges, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, SimpleChanges, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
 import HitCounter from "../utilities/hit-counter"
 import SuperheroText from '../utilities/superhero-text';
 
@@ -16,13 +16,18 @@ export type Superhero = {
   templateUrl: './superhero-profile.component.html',
   styleUrls: ['./superhero-profile.component.css'],
   providers:[ HitCounter ],
-  viewProviders:[ SuperheroText ]
-
+  viewProviders:[ SuperheroText ],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SuperheroProfileComponent implements OnInit, OnChanges {
 
   @Input() name: string;
   @Input("lives-in") livesIn: string;
+  @Input() superpowers: Array<string> = [];
+  @Input() address: {
+    firstLine: string,
+    city: string
+  };
 
   @Output() flyWithSuperhero = new EventEmitter<Superhero>();
   

@@ -1,10 +1,17 @@
-<mat-card class="custom-style">
+<mat-card class="half">
   <h2>{{name}}</h2>
   <div>Appeared in the year {{firstAppearance}}</div>
   <div>Lives in {{livesIn}}</div>
-
-  <button (click)="returnSuperheroData()"> Fly with a Superhero</button>
-  <!-- <hr /> -->
-  <!-- <superhero-profile-footer></superhero-profile-footer> -->
-  <!-- <ng-content></ng-content> -->
+  <div class="emphasize" *ngFor="let power of superpowers">
+    {{power}}
+  </div>
+  <div *ngIf="address" class="show-separate-block">
+    Meet the superhero at
+    <div>
+      {{address.firstLine}}
+    </div>
+    <div>
+      {{address.city}}
+    </div>
+  </div>
 </mat-card>

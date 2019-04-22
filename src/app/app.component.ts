@@ -8,8 +8,30 @@ import { Superhero } from './superheroes-material-design/superhero-profile/super
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  title: string = "Superheroes";
+
+  superpowers:Array<string> = [
+    "Can fly",
+    "Strength and Stamina",
+    "Kids love him"
+  ];
+
+  address: {
+    firstLine: string,
+    city: string
+  } = {
+    firstLine: "Road # 4",
+    city: "Bengaluru"
+  };
 
   printSuperhero(hero: Superhero){
     console.log(hero);
+  }
+
+  moveSuperhero(){
+    this.address = {
+      firstLine: this.address.firstLine,
+      city: "Hyderabad"
+    };
   }
 }

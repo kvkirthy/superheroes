@@ -1,6 +1,8 @@
 <app-superhero-toolbar>{{title}}</app-superhero-toolbar>
 
-<app-superhero-profile (flyWithSuperhero)="printSuperhero($event)" name="Chhota Bheem" firstAppearance="2008" lives-in="India">
+Move superhero from <input type="text" /> to <input type="text" /> &nbsp; &nbsp; <button (click)="moveSuperhero()">Go</button>
+
+<app-superhero-profile [superpowers]="superpowers" [address]="address" name="Chhota Bheem" firstAppearance="2008" lives-in="India">
 </app-superhero-profile>
 <!-- <app-superhero-profile></app-superhero-profile> -->
 

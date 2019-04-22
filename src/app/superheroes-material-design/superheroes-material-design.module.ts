@@ -8,12 +8,13 @@ import { SuperheroProfileComponent } from './superhero-profile/superhero-profile
 import { SuperheroToolbarComponent } from './superhero-toolbar/superhero-toolbar.component';
 import HitCounter from './utilities/hit-counter';
 import { SuperheroProfileFooterComponent } from './superhero-profile-footer/superhero-profile-footer.component';
+import { SuperheroListComponent } from './superhero-list/superhero-list.component';
 
 @NgModule({
   declarations: [
     SuperheroProfileComponent, 
     SuperheroToolbarComponent, 
-    SuperheroProfileFooterComponent, 
+    SuperheroProfileFooterComponent, SuperheroListComponent, 
   ],
   imports: [
     BrowserAnimationsModule, 
