@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatChipEvent } from '@angular/material/chips';
 
 @Component({
   selector: 'app-create-superhero',
@@ -7,9 +8,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateSuperheroComponent implements OnInit {
 
-  constructor() { }
+  country: string;
 
+  items: Array<string> = ["Laddu", "Cheese Burger" ];
+
+  
+  constructor() { }
+  
   ngOnInit() {
   }
+  
+  add(event){
+    this.items.push(event.value);
+  }
+
+  removeHandler(item: string){
+    this.items.splice(this.items.indexOf(item));
+  }
+
+
 
 }

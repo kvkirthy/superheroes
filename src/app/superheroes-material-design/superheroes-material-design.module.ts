@@ -4,6 +4,9 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field'
 import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatIconModule } from '@angular/material/icon';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SuperheroProfileComponent } from './superhero-profile/superhero-profile.component';
@@ -23,11 +26,13 @@ import { CreateSuperheroComponent } from './create-superhero/create-superhero.co
   ],
   imports: [
     BrowserAnimationsModule, 
-    
+    MatSelectModule,
     MatInputModule,
     MatCardModule, 
     MatToolbarModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatChipsModule,
+    MatIconModule
   ],
   exports: [
     SuperheroProfileComponent,

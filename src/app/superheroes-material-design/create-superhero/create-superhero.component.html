@@ -1,26 +1,36 @@
-<div>
+<!-- <div> -->
   <!-- <strong>Appearance: Legacy</strong> -->
-  <mat-form-field appearance="legacy">
+  <!-- <mat-form-field appearance="legacy">
     <mat-label>Superhero Name</mat-label>
-    <input type="text" matInput placeholder="A name to be remembered" />
+    <input type="search" matInput placeholder="A name to be remembered" />
     <mat-hint align="end">Enter name</mat-hint>
-  </mat-form-field>
-</div>
+    <mat-error>Superhero name is a must!</mat-error>
+  </mat-form-field> -->
+<!-- </div> -->
 
-<div>
+<!-- <div> -->
   <!-- <strong>Appearance: Standard</strong> -->
-  <mat-form-field floatLabel="float" appearance="standard">
-    <mat-label>Superhero Name</mat-label>
+  <!-- <mat-form-field floatLabel="float" appearance="standard">
+    <mat-label>Superhero Name</mat-label> -->
     <!-- <span style="margin-right: 5px" matPrefix>$</span> -->
-    <input type="text" required matInput placeholder="A name to be remembered" />
+    <!-- <input type="text" required matInput placeholder="A name to be remembered" /> -->
     <!-- <mat-hint>Enter name</mat-hint> -->
-  </mat-form-field>
-</div>
+  <!-- </mat-form-field>
+</div> -->
 
-<div>
+<!-- <div>
   <mat-form-field appearance="fill">
     <mat-label>Superhero Name</mat-label>
     <input type="text" matInput  placeholder="A name to be remembered"/>
+    <mat-hint>Enter name</mat-hint>
+  </mat-form-field>
+</div>
+-->
+<div>
+  <!-- Appearance: Outline -->
+  <mat-form-field appearance="outline">
+    <mat-label>Superhero Name</mat-label>
+    <input type="text" matInput required placeholder="A name to be remembered" />
     <mat-hint>Enter name</mat-hint>
   </mat-form-field>
 </div>
@@ -28,16 +38,79 @@
 <div>
   <!-- Appearance: Outline -->
   <mat-form-field appearance="outline">
-    <mat-label>Superhero Name</mat-label>
-    <input type="text" matInput required placeholder="A name to be remembered"/>
-    <mat-hint>Enter name</mat-hint>
+    <mat-label>Country</mat-label>
+    <mat-select placeholder="select country" [(value)]="country">
+      <mat-option>None</mat-option>
+      <mat-optgroup label="Earth">
+        <mat-option value="in">India</mat-option>
+        <mat-option value="us">United States</mat-option>
+      </mat-optgroup>
+      <mat-optgroup label="Outer Space">
+        <mat-option value="os">Asgard</mat-option>
+      </mat-optgroup>
+    </mat-select>
   </mat-form-field>
+  <!-- <strong>Superhero comes from " {{country}} "</strong> -->
 </div>
 
-<!-- <div>
+<div>
+    <!-- Appearance: Outline -->
     <mat-form-field appearance="outline">
-      <mat-label>Superhero Name</mat-label>
-      <input type="textarea" matInput  placeholder="A name to be remembered"/>
-      <mat-hint>Enter name</mat-hint>
+      <mat-label>Special Powers</mat-label>
+      <mat-select [(value)]="powers" multiple>
+        <mat-option>None</mat-option>
+        <mat-option value="fly">fly</mat-option>
+        <mat-option value="hammer">wield hammer</mat-option>
+        <mat-option value="power">grow powerful</mat-option>
+      </mat-select>
     </mat-form-field>
+    <!-- <strong> My superhero can " {{powers}} "</strong> -->
+  </div>
+
+  <div>
+      <mat-form-field appearance="standard">
+        <mat-label>Likes to eat</mat-label>
+        
+        <mat-chip-list #favFood>
+          <mat-chip *ngFor="let item of items" removable="true"  (removed)="removeHandler(item)">
+            {{item}}
+           <mat-icon matChipRemove>cancel</mat-icon>
+          </mat-chip>
+        </mat-chip-list>
+        
+        <input 
+          [matChipInputFor]="favFood" 
+          (matChipInputTokenEnd)="add($event)"
+          matChipInputAddOnBlur/>
+  
+      </mat-form-field>
+    
+    </div>
+
+  <!-- <div>
+    <mat-form-field appearance="standard">
+      <mat-label>Likes to eat</mat-label>
+      
+      <mat-chip-list #favFood>
+        <mat-chip *ngFor="let item of items" selectable removable (selected)="removeHandler(item)" (removed)="removeHandler(item)">
+          {{item}}
+          <mat-icon matChipRemove>cancel</mat-icon>
+        </mat-chip>
+      </mat-chip-list>
+      
+      <input 
+        [matChipInputFor]="favFood" 
+        [matChipInputAddOnBlur]="addOnBlur" 
+        (matChipInputTokenEnd)="add($event)"/>
+
+    </mat-form-field>
+  
   </div> -->
+
+<div>
+  <mat-form-field appearance="outline">
+    <mat-label>Powers</mat-label>
+    <textarea cdkTextareaAutosize cdkAutosizeMinRows="4" cdkAutosizeMaxRows="10" rows="6" matInput></textarea>
+    <mat-hint>Explain superhero powers</mat-hint>
+  </mat-form-field>
+</div>
