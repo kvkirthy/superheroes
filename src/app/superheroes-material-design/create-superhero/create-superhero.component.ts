@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatChipEvent } from '@angular/material/chips';
+import { Superhero } from '../models/superhero';
 
 @Component({
   selector: 'app-create-superhero',
@@ -8,22 +9,25 @@ import { MatChipEvent } from '@angular/material/chips';
 })
 export class CreateSuperheroComponent implements OnInit {
 
-  country: string;
-
-  items: Array<string> = ["Laddu", "Cheese Burger" ];
-
+  superhero: Superhero;
   
-  constructor() { }
+  constructor() { 
+    this.superhero = new Superhero();
+
+  }
+  get model(){
+    return JSON.stringify(this.superhero);
+  }
   
   ngOnInit() {
   }
   
   add(event){
-    this.items.push(event.value);
+    this.superhero.favFood.push(event.value);
   }
 
   removeHandler(item: string){
-    this.items.splice(this.items.indexOf(item));
+    this.superhero.favFood.splice(this.superhero.favFood.indexOf(item));
   }
 
 

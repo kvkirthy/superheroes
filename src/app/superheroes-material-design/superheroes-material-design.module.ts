@@ -7,6 +7,9 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule, MatButton } from '@angular/material/button';
+
+import { FormsModule } from '@angular/forms';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SuperheroProfileComponent } from './superhero-profile/superhero-profile.component';
@@ -32,7 +35,9 @@ import { CreateSuperheroComponent } from './create-superhero/create-superhero.co
     MatToolbarModule,
     MatFormFieldModule,
     MatChipsModule,
-    MatIconModule
+    MatIconModule,
+    MatButtonModule,
+    FormsModule
   ],
   exports: [
     SuperheroProfileComponent,
