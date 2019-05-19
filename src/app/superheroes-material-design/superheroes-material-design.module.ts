@@ -9,7 +9,7 @@ import { MatChipsModule } from '@angular/material/chips';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule, MatButton } from '@angular/material/button';
 
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SuperheroProfileComponent } from './superhero-profile/superhero-profile.component';
@@ -18,6 +18,7 @@ import HitCounter from './utilities/hit-counter';
 import { SuperheroProfileFooterComponent } from './superhero-profile-footer/superhero-profile-footer.component';
 import { SuperheroListComponent } from './superhero-list/superhero-list.component';
 import { CreateSuperheroComponent } from './create-superhero/create-superhero.component';
+import { CreateSuperheroReactiveFormComponent } from './create-superhero-reactive-form/create-superhero-reactive-form.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { CreateSuperheroComponent } from './create-superhero/create-superhero.co
     SuperheroToolbarComponent, 
     SuperheroProfileFooterComponent, 
     SuperheroListComponent, 
-    CreateSuperheroComponent, 
+    CreateSuperheroComponent,
+    CreateSuperheroReactiveFormComponent, 
   ],
   imports: [
     BrowserAnimationsModule, 
@@ -37,13 +39,15 @@ import { CreateSuperheroComponent } from './create-superhero/create-superhero.co
     MatChipsModule,
     MatIconModule,
     MatButtonModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports: [
     SuperheroProfileComponent,
     SuperheroToolbarComponent,
     SuperheroProfileFooterComponent,
-    CreateSuperheroComponent
+    CreateSuperheroComponent,
+    CreateSuperheroReactiveFormComponent
   ],
   providers:[HitCounter]
 })

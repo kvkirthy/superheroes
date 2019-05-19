@@ -1,20 +1,33 @@
 
 <form #superheroForm="ngForm">
+
+  <strong>
+    Form Status, Valid- {{superheroForm.valid}}. Pristine- {{superheroForm.pristine}}. Touched- {{superheroForm.touched}}
+  </strong>
     <div>
         <!-- Appearance: Outline -->
         <mat-form-field appearance="outline">
           <mat-label>Superhero Name</mat-label>
-          <input type="text" name="name" [(ngModel)]="superhero.name" matInput required placeholder="A name to be remembered" />
+          <input #spy="ngModel" type="text" name="name" [(ngModel)]="superhero.name" matInput required placeholder="A name to be remembered" />
           <mat-hint>Enter name</mat-hint>
         </mat-form-field>
+        <div>
+          {{spy.valid}}
+        </div>
       </div>
 
       <div>
           <mat-form-field appearance="outline">
             <mat-label>Email</mat-label>
-            <input type="text" name="email" email [(ngModel)]="superhero.email" matInput  />
+            <input #email="ngModel" type="text" name="email" email [(ngModel)]="superhero.email" matInput  />
             <mat-hint>How do I contact the superhero for help?</mat-hint>
           </mat-form-field>
+
+          <div class="error-message" *ngIf="!email.valid && email.touched">
+            Please enter a valid email address.
+
+          </div>
+
         </div>
       
       <div>
@@ -76,7 +89,7 @@
       
       <div class="pull-right">
         <button mat-stroked-button> Cancel </button>
-        <button mat-stroked-button> Save </button>
+        <button mat-stroked-button [disabled]="!superheroForm.valid"> Save </button>
       </div>
 
       <strong>

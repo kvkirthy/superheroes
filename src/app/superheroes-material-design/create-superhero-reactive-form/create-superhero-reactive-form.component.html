@@ -1,0 +1,74 @@
+<form #superheroForm="ngForm" [formGroup]="superheroFormGroup" (submit)="submitHanlder()">
+  <div>
+    <!-- Appearance: Outline -->
+    <mat-form-field appearance="outline">
+      <mat-label>Superhero Name</mat-label>
+      <input type="text" name="name" formControlName="name" matInput placeholder="A name to be remembered" />
+      <mat-hint>Enter name</mat-hint>
+    </mat-form-field>
+  </div>
+
+  <div>
+    <mat-form-field appearance="outline">
+      <mat-label>Email</mat-label>
+      <input type="text" name="email" formControlName="email" matInput />
+      <mat-icon *ngIf="email.valid" matSuffix >check_circle</mat-icon>
+      <mat-hint>How do I contact the superhero for help?</mat-hint>
+    </mat-form-field>
+    
+    <div *ngIf="email.errors.required" >
+      *Email is a required field
+    </div>
+
+    <div *ngIf="email.errors.email" >
+      *Invalid email. Use YourEMail@DomainName.com
+    </div>
+
+  </div>
+
+  <div>
+    <mat-form-field appearance="outline">
+      <mat-label>Powers</mat-label>
+      <textarea name="details" formControlName="details" cdkTextareaAutosize matInput></textarea>
+      <mat-hint>Explain superhero powers</mat-hint>
+    </mat-form-field>
+  </div>
+
+  <div>
+    <!-- Appearance: Outline -->
+    <mat-form-field appearance="outline">
+      <mat-label>Country</mat-label>
+      <mat-select formControlName="country" placeholder="select country">
+        <mat-option>None</mat-option>
+        <mat-optgroup label="Earth">
+          <mat-option value="in">India</mat-option>
+          <mat-option value="us">United States</mat-option>
+        </mat-optgroup>
+        <mat-optgroup label="Outer Space">
+          <mat-option value="os">Asgard</mat-option>
+        </mat-optgroup>
+      </mat-select>
+    </mat-form-field>
+    <!-- <strong>Superhero comes from " {{country}} "</strong> -->
+  </div>
+
+  <div>
+    <!-- Appearance: Outline -->
+    <mat-form-field appearance="outline">
+      <mat-label>Special Powers</mat-label>
+      <mat-select name="powers" formControlName="powers" multiple>
+        <mat-option>None</mat-option>
+        <mat-option value="fly">fly</mat-option>
+        <mat-option value="hammer">wield hammer</mat-option>
+        <mat-option value="power">grow powerful</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <!-- <strong> My superhero can " {{powers}} "</strong> -->
+  </div>
+
+  <div class="pull-right">
+    <button mat-stroked-button> Cancel </button>
+    <button mat-stroked-button type="submit" [disabled]="!superheroForm.valid"> Save </button>
+  </div>
+
+</form>
