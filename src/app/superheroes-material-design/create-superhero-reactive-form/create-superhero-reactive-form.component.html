@@ -1,4 +1,13 @@
 <form #superheroForm="ngForm" [formGroup]="superheroFormGroup" (submit)="submitHanlder()">
+
+  <div>
+      <mat-checkbox checked=”true” (change)="onToggleCheckboxChange($event)" labelPosition="before" disableRipple="true">
+          Add a cape to the hero?
+      </mat-checkbox>  
+      <!-- <mat-slide-toggle checked=”true” (change)="onToggleChange($event)" labelPosition="before" disableRipple="true">
+          Add a cape to the hero?
+      </mat-slide-toggle>         -->
+  </div>
   <div>
     <!-- Appearance: Outline -->
     <mat-form-field appearance="outline">
@@ -9,6 +18,19 @@
   </div>
 
   <div>
+    <div>
+      Rate Superhero
+    </div>
+    <div>
+      <strong>{{minRating}}</strong>
+      <!-- <mat-slider formControlName="rating" [max]="maxRating" [min]="minRating" step="1" ></mat-slider> -->
+      <mat-slider thumbLabel (input)="onSliderChange($event)" [value]="rating" [max]="maxRating" [min]="minRating" step="1" ></mat-slider>
+
+      <strong>{{maxRating}}</strong>
+    </div>
+  </div>
+
+  <div>
     <mat-form-field appearance="outline">
       <mat-label>Email</mat-label>
       <input type="text" name="email" formControlName="email" matInput />
@@ -16,15 +38,27 @@
       <mat-hint>How do I contact the superhero for help?</mat-hint>
     </mat-form-field>
     
-    <div *ngIf="email.errors.required" >
+    <div *ngIf="email.errors && email.errors.required" >
       *Email is a required field
     </div>
 
-    <div *ngIf="email.errors.email" >
+    <div *ngIf="email.errors && email.errors.email" >
       *Invalid email. Use YourEMail@DomainName.com
     </div>
 
   </div>
+
+  <div>
+    <mat-form-field>      
+      <mat-label>Schedule an appointment with Superhero</mat-label>
+      <input [min]="dobMinDate" formControlName="dob" [matDatepickerFilter]="filterWeekends" matInput [matDatepicker]="dateOfBirth" />
+      <!-- <input [min]="dobMinDate" [matDatepickerFilter]="dateFilter" [max]="dobMaxDate" matInput [matDatepicker]="dateOfBirth" /> -->
+      <!-- <input  matInput formControlName="dob"  [matDatepicker]="dateOfBirth" /> -->
+      <mat-datepicker-toggle matSuffix [for]="dateOfBirth">      </mat-datepicker-toggle>
+      <mat-datepicker #dateOfBirth ></mat-datepicker>
+    </mat-form-field>  
+  </div>
+
 
   <div>
     <mat-form-field appearance="outline">
@@ -35,8 +69,23 @@
   </div>
 
   <div>
+
+    <div>
+      <strong>Select Superhero's jurisdiction</strong>
+    </div>
+    <div formArrayName="jurisdiction" *ngFor="let city of superheroFormGroup.controls.jurisdiction.controls; let i=index;" >
+      <mat-checkbox [formControlName]="i" checked="false">
+          {{cities[i].name}}
+      </mat-checkbox>
+    </div>
+
+    <!-- <div formArrayName="jurisdiction" *ngFor="let city of superheroFormGroup.controls.jurisdiction.controls; let i=index;" >
+        <mat-slide-toggle [formControlName]="i" >
+          {{cities[i].name}}
+        </mat-slide-toggle>
+      </div> -->
     <!-- Appearance: Outline -->
-    <mat-form-field appearance="outline">
+    <!-- <mat-form-field appearance="outline">
       <mat-label>Country</mat-label>
       <mat-select formControlName="country" placeholder="select country">
         <mat-option>None</mat-option>
@@ -48,8 +97,9 @@
           <mat-option value="os">Asgard</mat-option>
         </mat-optgroup>
       </mat-select>
-    </mat-form-field>
+    </mat-form-field> -->
     <!-- <strong>Superhero comes from " {{country}} "</strong> -->
+
   </div>
 
   <div>

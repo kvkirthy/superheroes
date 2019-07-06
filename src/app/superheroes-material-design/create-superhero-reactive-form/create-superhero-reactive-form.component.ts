@@ -1,6 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter } from '@angular/core';
+import { MatSliderChange, MatSlider } from '@angular/material/slider';
+import { MatSlideToggleChange } from '@angular/material/slide-toggle';
+import { MatCheckboxChange } from '@angular/material/checkbox';
 import { FormBuilder, FormControl, FormGroup, FormArray, Validators } from '@angular/forms';
 import { Superhero } from '../models/superhero';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-create-superhero-reactive-form',
@@ -12,26 +16,73 @@ export class CreateSuperheroReactiveFormComponent implements OnInit {
 
   superheroFormGroup: FormGroup;
 
+  minRating:number = 1;
+  maxRating:number = 10;
+  rating: number=8;
+
+  dobMinDate = new Date();
+  dobMaxDate = new Date();
+
+  onSliderChange(event: MatSliderChange){
+    console.log(event.value );
+  }
+
+  onToggleChange(event: MatSlideToggleChange){
+    console.log(event.checked );
+  }
+
+  onToggleCheckboxChange(event: MatCheckboxChange){
+    console.log(event.checked );
+  }
+
+  filterWeekends(date: Date){
+    // if(date.day() !== 0 && date.day() !== 6){
+      return true;
+    // }
+    // return false;
+  }
+
+
   // name: FormControl = new FormControl("Chhotta Bheem by default");
   // email: FormControl = this.fb.control("");
   // details: FormControl = this.fb.control("");
   // powers: FormControl = this.fb.control("");
   // country: FormControl = this.fb.control("");
   // favFood: FormControl = this.fb.control("");
+  dob: Date = new Date("05/21/2019");
+  
+  cities = [ {
+    name: "New York",
+    selectedByDefault: true 
+  },{
+    name: "Boston",
+    selectedByDefault: false
+  },{
+    name: "Hyderabad",
+    selectedByDefault: false 
+  }, {
+    name: "Bengaluru",
+    selectedByDefault: true 
+  }];
 
   favs = [];
-  
+
 
   constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
+
+    let j = this.cities.map( i => new FormControl(i.selectedByDefault));
 
     this.superheroFormGroup = new FormGroup( {
       name: new FormControl('', Validators.required),
       email:new FormControl('', [Validators.required, Validators.email]),
       details: new FormControl('', [Validators.minLength(5),Validators.maxLength(100)]),
       powers: new FormControl(''),
-      country: new FormControl('')
+      country: new FormControl(''),
+      dob: new FormControl(new Date('05/20/2019')),
+      rating: new FormControl(2),
+      jurisdiction: new FormArray(j)
     });
 
 
@@ -41,32 +92,21 @@ export class CreateSuperheroReactiveFormComponent implements OnInit {
     //   details: ['', Validators.minLength(5), Validators.maxLength(100)],
     //   powers: '',
     //   country: '',
-    //   one:'',
-    //   favFood: [this.favs, []]
+    //   dob: new Date(),
+    //   rating: 8
+    //   // jurisdiction: this.fb.array(["New York, Boston, Hyderabad, Bengaluru"])
 
     // });
 
     // this.superheroFormGroup
     // .valueChanges
-    // .subscribe(item => 
+    // .subscribe(item =>
     //   console.log("Stream as form changes, ", item as Superhero));
 
     this.superheroFormGroup
     .valueChanges
     .subscribe(item => {
-
-      let i=this.email;
-      console.log(i, i.touched, i.invalid)
-      if(i.touched && i.invalid){
-        console.log("Set a flag to show email validation error");
-      }
-
-      // console.log("Form status", this.superheroFormGroup.status, this.superheroFormGroup.errors);
-      // console.log("Email status", 
-      //   this.email, this.email.pristine, this.email.dirty, this.email.touched, this.email.untouched, this.email.valid, this.email.invalid);
-      // console.log("Email Error Status",
-      //   this.email.errors.email);
-
+      item.jurisdiction.map( (value, it)=> console.log(this.cities[it].name, value));
     });
 
 
@@ -89,10 +129,10 @@ export class CreateSuperheroReactiveFormComponent implements OnInit {
 
   submitHanlder(){
     let superhero = this.superheroFormGroup.value as Superhero;
-    console.log("Superhero model object ", superhero);
+    console.log("Superhero model object ", moment(this.superheroFormGroup.value.dob).toDate());
   }
 
-  changeHandler(){    
+  changeHandler(){
     // console.log("Log the snapshot at a point in time, ", this.name.value);
   }
 

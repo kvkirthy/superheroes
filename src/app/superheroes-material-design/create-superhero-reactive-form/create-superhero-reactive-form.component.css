@@ -19,3 +19,7 @@ button{
     padding: 5px 5px 5px 5px;
     background-color: silver;
 }
+
+mat-slider{
+    width: 350px
+}

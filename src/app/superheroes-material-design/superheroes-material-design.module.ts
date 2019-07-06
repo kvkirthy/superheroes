@@ -7,7 +7,13 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatIconModule } from '@angular/material/icon';
-import { MatButtonModule, MatButton } from '@angular/material/button';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatSliderModule } from '@angular/material/slider';
+import { MatMomentDateModule } from '@angular/material-moment-adapter'
+import { MatSlideToggleModule } from '@angular/material/slide-toggle'
+// import { MatNativeDateModule } from '@angular/material/core';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -39,6 +45,12 @@ import { CreateSuperheroReactiveFormComponent } from './create-superhero-reactiv
     MatChipsModule,
     MatIconModule,
     MatButtonModule,
+    MatCheckboxModule,
+    MatSliderModule,
+    MatSlideToggleModule,
+    MatDatepickerModule,
+    //MatNativeDateModule,
+    MatMomentDateModule,
     FormsModule,
     ReactiveFormsModule
   ],
