@@ -25,6 +25,7 @@ import { SuperheroProfileFooterComponent } from './superhero-profile-footer/supe
 import { SuperheroListComponent } from './superhero-list/superhero-list.component';
 import { CreateSuperheroComponent } from './create-superhero/create-superhero.component';
 import { CreateSuperheroReactiveFormComponent } from './create-superhero-reactive-form/create-superhero-reactive-form.component';
+import { SuperheroComponent } from './superhero/superhero.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { CreateSuperheroReactiveFormComponent } from './create-superhero-reactiv
     SuperheroProfileFooterComponent, 
     SuperheroListComponent, 
     CreateSuperheroComponent,
-    CreateSuperheroReactiveFormComponent, 
+    CreateSuperheroReactiveFormComponent,
+    SuperheroComponent, 
   ],
   imports: [
     BrowserAnimationsModule, 

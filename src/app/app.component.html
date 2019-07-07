@@ -1,13 +1,19 @@
-<app-superhero-toolbar>{{title}}</app-superhero-toolbar>
+<app-superhero-toolbar>
+    {{title}}
+    
+    <a routerLink="/create-hero">
+        Create 
+    </a>
 
-<app-create-superhero-reactive-form></app-create-superhero-reactive-form>
+</app-superhero-toolbar>
+
+<!-- <app-create-superhero-reactive-form></app-create-superhero-reactive-form> -->
 
 <!-- <app-create-superhero></app-create-superhero> -->
 
 <!-- Move superhero from <input type="text" /> to <input type="text" /> &nbsp; &nbsp; <button (click)="moveSuperhero()">Go</button> -->
 
-<!-- <app-superhero-profile [superpowers]="superpowers" [address]="address" name="Chhota Bheem" firstAppearance="2008" lives-in="India"> -->
-<!-- </app-superhero-profile> -->
+
 <!-- <app-superhero-profile></app-superhero-profile> -->
 
 <router-outlet></router-outlet>

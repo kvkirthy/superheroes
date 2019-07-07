@@ -1,3 +1,9 @@
-<p>
-  superhero-list works!
-</p>
+<div *ngFor="let hero of heroes">
+  <mat-card >
+      <h3>{{hero.name}}</h3>
+      <div>Lives in {{hero.livesIn}}</div>
+      <div>Speciality is {{hero.power}}</div>  
+    </mat-card>
+</div>
+
+
