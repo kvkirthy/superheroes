@@ -26,6 +26,8 @@ import { SuperheroListComponent } from './superhero-list/superhero-list.componen
 import { CreateSuperheroComponent } from './create-superhero/create-superhero.component';
 import { CreateSuperheroReactiveFormComponent } from './create-superhero-reactive-form/create-superhero-reactive-form.component';
 import { SuperheroComponent } from './superhero/superhero.component';
+import { AppRoutingModule } from '../app-routing.module';
+import { ErrorPageComponent } from './error-page/error-page.component';
 
 @NgModule({
   declarations: [
@@ -35,9 +37,11 @@ import { SuperheroComponent } from './superhero/superhero.component';
     SuperheroListComponent, 
     CreateSuperheroComponent,
     CreateSuperheroReactiveFormComponent,
-    SuperheroComponent, 
+    SuperheroComponent,
+    ErrorPageComponent, 
   ],
   imports: [
+    AppRoutingModule,
     BrowserAnimationsModule, 
     MatSelectModule,
     MatInputModule,

@@ -5,6 +5,18 @@
         Create 
     </a>
 
+    <a routerLink="/heroes" [queryParams]="{sortOrder: 'descending'}">
+    <!-- <a (click)="heroListDescending()"> -->
+
+        List (Order Descending)
+    </a>
+    <a routerLink="/heroes" [queryParams]="{sortOrder: 'ascending'}">
+        List (Order Ascending)
+    </a>
+    <!-- <a (click)="navigateToCreate()">
+            Create 
+    </a> -->
+
 </app-superhero-toolbar>
 
 <!-- <app-create-superhero-reactive-form></app-create-superhero-reactive-form> -->

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { MatToolbar } from '@angular/material/toolbar';
 import { Superhero } from './superheroes-material-design/superhero-profile/superhero-profile.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -9,6 +9,17 @@ import { Superhero } from './superheroes-material-design/superhero-profile/super
 })
 export class AppComponent {
   title: string = "Superheroes";
+
+  constructor(private router: Router){    
+  }
+
+  navigateToCreate(){
+    this.router.navigate(['/create-hero']);
+  }
+
+  heroListDescending(){
+    this.router.navigate(['/heroes'], {queryParams:{sortOrder: 'descending'}});
+  }
 
   superpowers:Array<string> = [
     "Can fly",

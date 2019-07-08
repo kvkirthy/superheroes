@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Superhero } from '../models/superhero';
+import { switchMap} from 'rxjs/operators';
 
 @Component({
   selector: 'app-superhero',
@@ -9,7 +10,7 @@ import { Superhero } from '../models/superhero';
 })
 export class SuperheroComponent implements OnInit {
 
-  hero: any;
+  hero: Superhero;
   private heroes: Array<Superhero> = [
     {
       name: "Chhotta Bheem",
@@ -38,10 +39,26 @@ export class SuperheroComponent implements OnInit {
   ];
 
   constructor(private route: ActivatedRoute) { 
-    this.hero = this.heroes.find( i => i.name.toLowerCase() === this.route.snapshot.params.heroName.toLowerCase());
+    
   }
 
   ngOnInit() {
-  }
+    // Using Snpashot
+    // let heroNameParam = this.route.snapshot.params.heroName;
+    // this.hero = this.heroes.find( i => i.name.toLowerCase() === heroNameParam.toLowerCase());
+
+
+
+//    Using Observable
+    let heroNameParam: string;
+    this.route
+      .params
+      .subscribe ( r => {
+        this.hero = this.heroes.find( i => i.name.toLowerCase() === r.heroName.toLowerCase());
+      });
+
+   }
+
+
 
 }

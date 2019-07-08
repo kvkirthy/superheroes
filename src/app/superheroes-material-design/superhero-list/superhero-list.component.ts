@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import * as _ from 'lodash';
 
 @Component({
   selector: 'app-superhero-list',
@@ -7,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SuperheroListComponent implements OnInit {
 
-  private heroes = [
+  heroes = [
     {
       name: "Chhota Bheem",
       livesIn: "Dholakpur",
@@ -25,9 +27,33 @@ export class SuperheroListComponent implements OnInit {
     }
   ];
 
-  constructor() { }
+  constructor(private route: ActivatedRoute,
+    private router: Router) { }
+
+  navigateToHeroDetails(heroName){
+    this.router.navigate([`/hero/${heroName}`]);
+  }
 
   ngOnInit() {
+
+    // let sortOrder = this.route.snapshot.queryParams.sortOrder;
+
+    // if(sortOrder && sortOrder === "descending"){
+    //   this.heroes= _.sortBy(this.heroes, 'name').reverse()
+    // }else{
+    //   this.heroes= _.sortBy(this.heroes, 'name');
+
+    // }
+
+    this.route
+      .queryParams
+      .subscribe( (p) => {
+        if(p.sortOrder && p.sortOrder === "descending"){
+          this.heroes= _.sortBy(this.heroes, 'name').reverse()
+        }else{
+          this.heroes= _.sortBy(this.heroes, 'name');
+        }
+      });
   }
 
 }
