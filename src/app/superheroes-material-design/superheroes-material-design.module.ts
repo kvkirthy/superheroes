@@ -13,6 +13,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatMomentDateModule } from '@angular/material-moment-adapter'
 import { MatSlideToggleModule } from '@angular/material/slide-toggle'
+import { MatSidenavModule, MatSidenavContainer } from '@angular/material/sidenav';
 // import { MatNativeDateModule } from '@angular/material/core';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -28,6 +29,9 @@ import { CreateSuperheroReactiveFormComponent } from './create-superhero-reactiv
 import { SuperheroComponent } from './superhero/superhero.component';
 import { AppRoutingModule } from '../app-routing.module';
 import { ErrorPageComponent } from './error-page/error-page.component';
+import { SuperheroSidenavComponent } from './superhero-sidenav/superhero-sidenav.component';
+import { SuperheroSidenavContainerComponent } from './superhero-sidenav-container/superhero-sidenav-container.component';
+import { SuperheroSidenavContentComponent } from './superhero-sidenav-content/superhero-sidenav-content.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +42,10 @@ import { ErrorPageComponent } from './error-page/error-page.component';
     CreateSuperheroComponent,
     CreateSuperheroReactiveFormComponent,
     SuperheroComponent,
-    ErrorPageComponent, 
+    ErrorPageComponent,
+    SuperheroSidenavComponent,
+    SuperheroSidenavContainerComponent,
+    SuperheroSidenavContentComponent, 
   ],
   imports: [
     AppRoutingModule,
@@ -58,14 +65,18 @@ import { ErrorPageComponent } from './error-page/error-page.component';
     //MatNativeDateModule,
     MatMomentDateModule,
     FormsModule,
+    MatSidenavModule,
     ReactiveFormsModule
   ],
   exports: [
     SuperheroProfileComponent,
     SuperheroToolbarComponent,
     SuperheroProfileFooterComponent,
+    SuperheroSidenavComponent,
     CreateSuperheroComponent,
-    CreateSuperheroReactiveFormComponent
+    CreateSuperheroReactiveFormComponent,
+    SuperheroSidenavContainerComponent,
+    SuperheroSidenavContentComponent
   ],
   providers:[HitCounter]
 })

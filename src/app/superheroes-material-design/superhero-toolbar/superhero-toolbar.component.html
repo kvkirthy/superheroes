@@ -1,3 +1,14 @@
-<mat-toolbar color="primary">
-  <ng-content></ng-content>
+<mat-toolbar color="primary">  
+  <mat-toolbar-row>    
+      <mat-icon (click)="toggleForMenuClick()" class="menu">menu</mat-icon>    
+    Superhero
+  </mat-toolbar-row>
+
+  <mat-toolbar-row>
+    List of Superheroes
+    <span class="central-stretchable-space"></span>
+    <ng-content></ng-content>
+    <!-- <a class="action">View</a>
+    <a class="action">Create</a> -->
+  </mat-toolbar-row>
 </mat-toolbar>

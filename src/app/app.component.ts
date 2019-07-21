@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, ViewChild } from '@angular/core';
 import { Superhero } from './superheroes-material-design/superhero-profile/superhero-profile.component';
 import { Router } from '@angular/router';
+import { SuperheroSidenavComponent } from './superheroes-material-design/superhero-sidenav/superhero-sidenav.component';
 
 @Component({
   selector: 'app-root',
@@ -9,8 +10,13 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
   title: string = "Superheroes";
+  @ViewChild("sidenav") sidenav: SuperheroSidenavComponent;
 
   constructor(private router: Router){    
+  }
+
+  toggleSidenav(evt: EventEmitter<boolean>){
+    evt ? this.sidenav.open() : this.sidenav.close();
   }
 
   navigateToCreate(){
