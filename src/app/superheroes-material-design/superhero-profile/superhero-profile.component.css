@@ -1,12 +1,14 @@
-.show-separate-block{
-    margin: 25px 10px 25px 10px;
+mat-card{    
+    padding: 10px 35px 35px 30px;
+    margin: 10px 35px 35px 30px;
+    width: 35%;
 }
 
-.half{
-    width:50%;
-    padding-top: 15px;
+mat-card-footer{
+    font-style: italic;
 }
 
-.emphasize{
-    font-style: italic
-}
+.example-header-image {
+    background-image: url('/assets/spiderman.jpg');
+    background-size: cover;
+  }

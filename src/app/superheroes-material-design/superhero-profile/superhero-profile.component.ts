@@ -29,6 +29,8 @@ export class SuperheroProfileComponent implements OnInit, OnChanges {
     city: string
   };
 
+  @Input("card-image") cardImage: string;
+
   @Output() flyWithSuperhero = new EventEmitter<Superhero>();
   
   // create a private field 

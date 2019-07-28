@@ -5,6 +5,7 @@ import { SuperheroListComponent } from './superheroes-material-design/superhero-
 import { CreateSuperheroReactiveFormComponent } from './superheroes-material-design/create-superhero-reactive-form/create-superhero-reactive-form.component';
 import { SuperheroComponent } from './superheroes-material-design/superhero/superhero.component';
 import { ErrorPageComponent } from './superheroes-material-design/error-page/error-page.component';
+import { CreateSuperheroComponent } from './superheroes-material-design/create-superhero/create-superhero.component';
 
 const routes: Routes = [
   {
@@ -13,7 +14,7 @@ const routes: Routes = [
   },
   {
     path: "create-hero",
-    component: CreateSuperheroReactiveFormComponent
+    component: CreateSuperheroComponent
   },
   {
     path: "hero/:heroName",

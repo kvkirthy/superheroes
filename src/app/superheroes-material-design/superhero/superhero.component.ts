@@ -17,6 +17,7 @@ export class SuperheroComponent implements OnInit {
       email: "ChhottaBheem@angularsample.com",
       details: "A hero in Dholakpur village",
       country: "India",
+      cardImage: "spiderman.jpg",
       specialPowers: ["Strong"],
       favFood: ["Laddu"]
     },
@@ -26,6 +27,7 @@ export class SuperheroComponent implements OnInit {
       details: "A hero in New York city",
       country: "United States",
       specialPowers: ["Shoots web"],
+      cardImage: "spiderman.jpg",
       favFood: ["Cheese burger"]
     },
     {
@@ -33,6 +35,7 @@ export class SuperheroComponent implements OnInit {
       email: "batman@angularsample.com",
       details: "A hero in Gotham city",
       country: "United Kingdom",
+      cardImage: "spiderman.jpg",
       specialPowers: ["Martial Arts"],
       favFood: ["Spaghetti"]
     }

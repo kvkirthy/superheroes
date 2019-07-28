@@ -1,17 +1,26 @@
 <mat-card class="half">
-  <h2>{{name}}</h2>
-  <div>Appeared in the year {{firstAppearance}}</div>
-  <div>Lives in {{livesIn}}</div>
-  <div class="emphasize" *ngFor="let power of superpowers">
-    {{power}}
-  </div>
-  <div *ngIf="address" class="show-separate-block">
-    Meet the superhero at
-    <div>
-      {{address.firstLine}}
+  <mat-card-header>
+    <!-- <div mat-card-avatar class="example-header-image"></div> -->
+    <img mat-card-avatar src="/assets/Superhero-logo.png" >
+
+    <mat-card-title>{{name}}</mat-card-title>
+    <mat-card-subtitle>A superhero, who lives in {{livesIn}}. </mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image src="/assets/spiderman.jpg" >
+  <mat-card-content>
+    <div>Appeared in the year {{firstAppearance}}</div>
+    <div>Lives in {{livesIn}}</div>
+    <div *ngFor="let power of superpowers">
+      {{power}}
     </div>
-    <div>
-      {{address.city}}
+    <div *ngIf="address" >
+      Meet the superhero at
+      <div>
+        {{address.firstLine}}
+      </div>
+      <div>
+        {{address.city}}
+      </div>
     </div>
-  </div>
+  </mat-card-content>
 </mat-card>

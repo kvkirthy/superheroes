@@ -5,4 +5,5 @@ export class Superhero {
     country: string;
     specialPowers: Array<string> = [];
     favFood: Array<string> = [];
+    cardImage: string;
 }

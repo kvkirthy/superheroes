@@ -1,43 +1,55 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      Create a new superhero
+    </mat-card-title>
+    <mat-card-subtitle>
+      A new superhero is born in the system
+    </mat-card-subtitle>
 
-<form #superheroForm="ngForm">
-
-  <strong>
-    Form Status, Valid- {{superheroForm.valid}}. Pristine- {{superheroForm.pristine}}. Touched- {{superheroForm.touched}}
-  </strong>
-    <div>
+  </mat-card-header>
+  <mat-card-content>
+    <form #superheroForm="ngForm">
+      <!-- <strong>
+        Form Status, Valid- {{superheroForm.valid}}. Pristine- {{superheroForm.pristine}}. Touched-
+        {{superheroForm.touched}}
+      </strong> -->
+      <div>
         <!-- Appearance: Outline -->
         <mat-form-field appearance="outline">
           <mat-label>Superhero Name</mat-label>
-          <input #spy="ngModel" type="text" name="name" [(ngModel)]="superhero.name" matInput required placeholder="A name to be remembered" />
+          <input #spy="ngModel" type="text" name="name" [(ngModel)]="superhero.name" matInput required
+            placeholder="A name to be remembered" />
           <mat-hint>Enter name</mat-hint>
         </mat-form-field>
-        <div>
+        <!-- <div>
           {{spy.valid}}
-        </div>
+        </div> -->
       </div>
 
       <div>
-          <mat-form-field appearance="outline">
-            <mat-label>Email</mat-label>
-            <input #email="ngModel" type="text" name="email" email [(ngModel)]="superhero.email" matInput  />
-            <mat-hint>How do I contact the superhero for help?</mat-hint>
-          </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Email</mat-label>
+          <input #email="ngModel" type="text" name="email" email [(ngModel)]="superhero.email" matInput />
+          <mat-hint>How do I contact the superhero for help?</mat-hint>
+        </mat-form-field>
 
-          <div class="error-message" *ngIf="!email.valid && email.touched">
-            Please enter a valid email address.
-
-          </div>
+        <div class="error-message" *ngIf="!email.valid && email.touched">
+          Please enter a valid email address.
 
         </div>
-      
+
+      </div>
+
       <div>
         <mat-form-field appearance="outline">
           <mat-label>Powers</mat-label>
-          <textarea name="details" [(ngModel)]="superhero.details" minlength="4" maxlength="10" cdkTextareaAutosize cdkAutosizeMinRows="4" cdkAutosizeMaxRows="10" rows="6" matInput></textarea>
+          <textarea name="details" [(ngModel)]="superhero.details" minlength="4" maxlength="10" cdkTextareaAutosize
+            cdkAutosizeMinRows="4" cdkAutosizeMaxRows="10" rows="6" matInput></textarea>
           <mat-hint>Explain superhero powers</mat-hint>
         </mat-form-field>
       </div>
-      
+
       <div>
         <!-- Appearance: Outline -->
         <mat-form-field appearance="outline">
@@ -55,7 +67,7 @@
         </mat-form-field>
         <!-- <strong>Superhero comes from " {{country}} "</strong> -->
       </div>
-      
+
       <div>
         <!-- Appearance: Outline -->
         <mat-form-field appearance="outline">
@@ -69,30 +81,34 @@
         </mat-form-field>
         <!-- <strong> My superhero can " {{powers}} "</strong> -->
       </div>
-      
+
       <div>
         <mat-form-field appearance="standard">
           <mat-label>Likes to eat</mat-label>
-      
-          <mat-chip-list name="favFood" #favFood [(ngModel)]="superhero.favFood"> 
+
+          <mat-chip-list name="favFood" #favFood [(ngModel)]="superhero.favFood">
             <mat-chip *ngFor="let item of superhero.favFood" removable="true" (removed)="removeHandler(item)">
               {{item}}
               <mat-icon matChipRemove>cancel</mat-icon>
             </mat-chip>
           </mat-chip-list>
-      
+
           <input [matChipInputFor]="favFood" (matChipInputTokenEnd)="add($event)" matChipInputAddOnBlur />
-      
+
         </mat-form-field>
-      
-      </div>
-      
-      <div class="pull-right">
-        <button mat-stroked-button> Cancel </button>
-        <button mat-stroked-button [disabled]="!superheroForm.valid"> Save </button>
+
       </div>
 
-      <strong>
+      <!-- <strong>
         {{model}}
-      </strong>
-</form>
+      </strong> -->
+    </form>
+  </mat-card-content>
+  <mat-card-actions align="end">
+    <button mat-stroked-button> Cancel </button>
+    <button mat-stroked-button [disabled]="!superheroForm.valid"> Save </button>
+  </mat-card-actions>
+  <mat-card-footer>
+    * All superheroes can fly
+  </mat-card-footer>
+</mat-card>
