@@ -14,6 +14,7 @@ import { MatSliderModule } from '@angular/material/slider';
 import { MatMomentDateModule } from '@angular/material-moment-adapter'
 import { MatSlideToggleModule } from '@angular/material/slide-toggle'
 import { MatSidenavModule, MatSidenavContainer } from '@angular/material/sidenav';
+import { MatTabsModule } from '@angular/material/tabs';
 // import { MatNativeDateModule } from '@angular/material/core';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -32,6 +33,7 @@ import { ErrorPageComponent } from './error-page/error-page.component';
 import { SuperheroSidenavComponent } from './superhero-sidenav/superhero-sidenav.component';
 import { SuperheroSidenavContainerComponent } from './superhero-sidenav-container/superhero-sidenav-container.component';
 import { SuperheroSidenavContentComponent } from './superhero-sidenav-content/superhero-sidenav-content.component';
+import { TabSampleComponent } from './tab-sample/tab-sample.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +47,8 @@ import { SuperheroSidenavContentComponent } from './superhero-sidenav-content/su
     ErrorPageComponent,
     SuperheroSidenavComponent,
     SuperheroSidenavContainerComponent,
-    SuperheroSidenavContentComponent, 
+    SuperheroSidenavContentComponent,
+    TabSampleComponent, 
   ],
   imports: [
     AppRoutingModule,
@@ -66,6 +69,7 @@ import { SuperheroSidenavContentComponent } from './superhero-sidenav-content/su
     MatMomentDateModule,
     FormsModule,
     MatSidenavModule,
+    MatTabsModule,
     ReactiveFormsModule
   ],
   exports: [
@@ -76,7 +80,8 @@ import { SuperheroSidenavContentComponent } from './superhero-sidenav-content/su
     CreateSuperheroComponent,
     CreateSuperheroReactiveFormComponent,
     SuperheroSidenavContainerComponent,
-    SuperheroSidenavContentComponent
+    SuperheroSidenavContentComponent,
+    TabSampleComponent
   ],
   providers:[HitCounter]
 })

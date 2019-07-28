@@ -1,29 +1,19 @@
 <app-superhero-toolbar (menuClick)="toggleSidenav($event)">
 
-    <a routerLink="/create-hero">
-        Create 
-    </a>
 
-    <a routerLink="/heroes" [queryParams]="{sortOrder: 'descending'}">
-    <!-- <a (click)="heroListDescending()"> -->
-
-        List (Order Descending)
-    </a>
-    <a routerLink="/heroes" [queryParams]="{sortOrder: 'ascending'}">
-        List (Order Ascending)
-    </a>
     <!-- <a (click)="navigateToCreate()">
             Create 
     </a> -->
 
 </app-superhero-toolbar>
-<app-superhero-sidenav-container>
-    <app-superhero-sidenav #sidenav></app-superhero-sidenav>
+<app-tab-sample>  </app-tab-sample>
+<!-- <app-superhero-sidenav-container> -->
+    <!-- <app-superhero-sidenav #sidenav></app-superhero-sidenav> -->
     <!-- <app-superhero-sidenav #sidenav position="end"></app-superhero-sidenav> -->
-    <app-superhero-sidenav-content>
+    <!-- <app-superhero-sidenav-content> -->
         <router-outlet></router-outlet>
-    </app-superhero-sidenav-content>
-</app-superhero-sidenav-container>
+    <!-- </app-superhero-sidenav-content> -->
+<!-- </app-superhero-sidenav-container> -->
 <!-- <app-create-superhero-reactive-form></app-create-superhero-reactive-form> -->
 
 <!-- <app-create-superhero></app-create-superhero> -->
