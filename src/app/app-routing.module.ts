@@ -6,8 +6,13 @@ import { CreateSuperheroReactiveFormComponent } from './superheroes-material-des
 import { SuperheroComponent } from './superheroes-material-design/superhero/superhero.component';
 import { ErrorPageComponent } from './superheroes-material-design/error-page/error-page.component';
 import { CreateSuperheroComponent } from './superheroes-material-design/create-superhero/create-superhero.component';
+import { SuperheroesExpandableListComponent } from './superheroes-material-design/superheroes-expandable-list/superheroes-expandable-list.component';
 
 const routes: Routes = [
+  {
+    path: "heroes-accordion",
+    component: SuperheroesExpandableListComponent
+  },
   {
     path: "heroes",
     component: SuperheroListComponent
