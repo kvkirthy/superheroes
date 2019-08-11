@@ -7,6 +7,7 @@ import { SuperheroComponent } from './superheroes-material-design/superhero/supe
 import { ErrorPageComponent } from './superheroes-material-design/error-page/error-page.component';
 import { CreateSuperheroComponent } from './superheroes-material-design/create-superhero/create-superhero.component';
 import { SuperheroesExpandableListComponent } from './superheroes-material-design/superheroes-expandable-list/superheroes-expandable-list.component';
+import { SuperheroNewListComponent } from './superheroes-material-design/superhero-new-list/superhero-new-list.component';
 
 const routes: Routes = [
   {
@@ -16,6 +17,10 @@ const routes: Routes = [
   {
     path: "heroes",
     component: SuperheroListComponent
+  },
+  {
+    path: "hero-list",
+    component: SuperheroNewListComponent
   },
   {
     path: "create-hero",

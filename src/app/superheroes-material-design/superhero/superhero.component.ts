@@ -41,6 +41,10 @@ export class SuperheroComponent implements OnInit {
     }
   ];
 
+  get heroProp(){
+    return JSON.stringify(this.hero);
+  }
+
   constructor(private route: ActivatedRoute) { 
     
   }

@@ -16,6 +16,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle'
 import { MatSidenavModule, MatSidenavContainer } from '@angular/material/sidenav';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { MatListModule } from '@angular/material/list';
 
 // import { MatNativeDateModule } from '@angular/material/core';
 
@@ -37,6 +38,7 @@ import { SuperheroSidenavContainerComponent } from './superhero-sidenav-containe
 import { SuperheroSidenavContentComponent } from './superhero-sidenav-content/superhero-sidenav-content.component';
 import { TabSampleComponent } from './tab-sample/tab-sample.component';
 import { SuperheroesExpandableListComponent } from './superheroes-expandable-list/superheroes-expandable-list.component';
+import { SuperheroNewListComponent } from './superhero-new-list/superhero-new-list.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +54,8 @@ import { SuperheroesExpandableListComponent } from './superheroes-expandable-lis
     SuperheroSidenavContainerComponent,
     SuperheroSidenavContentComponent,
     TabSampleComponent,
-    SuperheroesExpandableListComponent, 
+    SuperheroesExpandableListComponent,
+    SuperheroNewListComponent, 
   ],
   imports: [
     AppRoutingModule,
@@ -75,6 +78,8 @@ import { SuperheroesExpandableListComponent } from './superheroes-expandable-lis
     MatSidenavModule,
     MatTabsModule,
     MatExpansionModule,
+    MatListModule,
+
     ReactiveFormsModule
   ],
   exports: [
@@ -87,6 +92,7 @@ import { SuperheroesExpandableListComponent } from './superheroes-expandable-lis
     SuperheroSidenavContainerComponent,
     SuperheroSidenavContentComponent,
     SuperheroesExpandableListComponent,
+    SuperheroNewListComponent,
     TabSampleComponent
   ],
   providers:[HitCounter]
