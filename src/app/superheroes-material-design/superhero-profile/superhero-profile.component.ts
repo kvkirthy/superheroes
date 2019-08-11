@@ -46,6 +46,9 @@ export class SuperheroProfileComponent implements OnInit, OnChanges {
     }
   }
 
+  get image(){
+    return `/assets/${this.cardImage}`;
+  }
   returnSuperheroData(){
     let hero = {
       name: this.name,
@@ -66,12 +69,10 @@ export class SuperheroProfileComponent implements OnInit, OnChanges {
 
 
   constructor(private hitCounter: HitCounter) {
-    //this.hitCounter.counter;
+    this.hitCounter.counter;
    }
 
-   incrementCounter(){
-     this.hitCounter.incrementCounter()
-   }
+
 
   ngOnInit() {
   }

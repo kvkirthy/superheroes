@@ -6,7 +6,7 @@
     <mat-card-title>{{name}}</mat-card-title>
     <mat-card-subtitle>A superhero, who lives in {{livesIn}}. </mat-card-subtitle>
   </mat-card-header>
-  <img mat-card-image src="/assets/spiderman.jpg" >
+  <img mat-card-image [src]="image" >
   <mat-card-content>
     <div>Appeared in the year {{firstAppearance}}</div>
     <div>Lives in {{livesIn}}</div>
