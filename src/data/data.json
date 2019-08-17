@@ -1,0 +1,73 @@
+{
+  "heroes": [
+    {
+      "id": "001",
+      "name": "Spiderman",
+      "email": "spiderman@angularsample.com",
+      "details": "A hero in New York city",
+      "country": "United States",
+      "cardImage": "spiderman.jpg",
+      "specialPowers": [
+        "Shoots web"
+      ],
+      "favFood": [
+        "Cheese burger"
+      ]
+    },
+    {
+      "name": "Batman",
+      "email": "batman@angularsample.com",
+      "details": "A hero in Gotham city",
+      "country": "United Kingdom",
+      "cardImage": "batman.jpg",
+      "specialPowers": [
+        "Martial Arts"
+      ],
+      "favFood": [
+        "Spaghetti"
+      ]
+    },
+    {
+      "name": "Chhotta Bheem",
+      "email": "ChhottaBheem@angularsample.com",
+      "details": "A hero in Dholakpur village",
+      "country": "India",
+      "cardImage": "bheem.png",
+      "specialPowers": [
+        "Strong"
+      ],
+      "favFood": [
+        "Laddu"
+      ]
+    },
+    {
+      "id": 0.8962275652450142,
+      "hero": {
+        "specialPowers": [
+          "fly",
+          "power"
+        ],
+        "favFood": [
+          "Sugar"
+        ],
+        "name": "Antman",
+        "email": "antman@superheroes.com",
+        "details": "small",
+        "country": "us"
+      }
+    },
+    {
+      "specialPowers": [
+        "fly"
+      ],
+      "favFood": [
+        "Sugar"
+      ],
+      "name": "Antman2",
+      "email": "antman2@superheroes.com",
+      "details": "test",
+      "country": "in",
+      "id": 0.9247175939551284
+    }
+  ]
+}

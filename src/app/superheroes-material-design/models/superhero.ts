@@ -7,3 +7,7 @@ export class Superhero {
     favFood: Array<string> = [];
     cardImage: string;
 }
+
+export class Superhero2 extends Superhero{
+    id: number;
+}

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatChipEvent } from '@angular/material/chips';
-import { Superhero } from '../models/superhero';
+import { Superhero, Superhero2 } from '../models/superhero';
+import { SuperheroDataService } from 'src/app/app-http-calls/superhero-data.service';
 
 @Component({
   selector: 'app-create-superhero',
@@ -11,7 +12,7 @@ export class CreateSuperheroComponent implements OnInit {
 
   superhero: Superhero;
   
-  constructor() { 
+  constructor(private dataService: SuperheroDataService) { 
     this.superhero = new Superhero();
 
   }
@@ -30,6 +31,17 @@ export class CreateSuperheroComponent implements OnInit {
     this.superhero.favFood.splice(this.superhero.favFood.indexOf(item));
   }
 
+  submitForm(){
+    // let hero = this.superhero as Superhero2;
+    // hero.id = Math.random();
+    // this.dataService
+    //   .createHero (hero)
+    //   .subscribe(data => console.log(data));
 
+    let hero = this.superhero;
+    this.dataService
+      .updateHero (hero, "0.9247175939551284")
+      .subscribe(data => console.log(data));
+  }
 
 }

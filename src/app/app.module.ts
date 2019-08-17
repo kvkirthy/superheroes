@@ -5,6 +5,7 @@ import {SuperheroesMaterialDesignModule} from './superheroes-material-design/sup
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AppHttpCallsModule } from './app-http-calls/app-http-calls.module';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    SuperheroesMaterialDesignModule
+    SuperheroesMaterialDesignModule,
+    AppHttpCallsModule
   ],
   bootstrap: [AppComponent]
 })

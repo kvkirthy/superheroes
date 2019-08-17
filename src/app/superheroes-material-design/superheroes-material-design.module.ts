@@ -82,7 +82,6 @@ import { SuperheroGridListComponent } from './superhero-grid-list/superhero-grid
     MatExpansionModule,
     MatListModule,
     MatGridListModule,
-
     ReactiveFormsModule
   ],
   exports: [
