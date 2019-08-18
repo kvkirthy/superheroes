@@ -2,6 +2,8 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { Superhero } from '../models/superhero';
 import { SelectionModel } from '@angular/cdk/collections';
 import { MatListOption, MatSelectionListChange } from '@angular/material/list';
+import { MatBottomSheet } from '@angular/material/bottom-sheet';
+import { ActionsBottomsheetComponent } from '../actions-bottomsheet/actions-bottomsheet.component';
 
 @Component({
   selector: 'app-superhero-new-list',
@@ -43,6 +45,7 @@ export class SuperheroNewListComponent implements OnInit {
   ];
 
   listItemSelected(data){
+    this.bottomsheet.open(ActionsBottomsheetComponent);
     //console.log(data);
   }
 
@@ -50,7 +53,7 @@ export class SuperheroNewListComponent implements OnInit {
     console.log(event.option.value, event.option.selected);
   }
 
-  constructor() { }
+  constructor(private bottomsheet: MatBottomSheet) { }
 
   ngOnInit() {
   }

@@ -4,7 +4,9 @@
   </h2>
   <div>
     Are you sure to cancel without saving the data?
-    {{message}}
+    <div *ngIf="message">
+      <strong>{{message}}</strong>
+    </div>
   </div>
   <mat-divider ></mat-divider>
   <div>

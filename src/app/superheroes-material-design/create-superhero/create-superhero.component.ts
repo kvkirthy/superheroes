@@ -62,7 +62,13 @@ export class CreateSuperheroComponent implements OnInit {
   //     }
   //   });
 
-      let ref = this.bottomSheet.open(CancelConfirmBottomsheetComponent);
+      let ref = this.bottomSheet.open(CancelConfirmBottomsheetComponent,
+        {
+          data: {
+          message: "Create Superhero action attempted to be cancelled"
+        }
+      });
+      
       ref.afterDismissed().subscribe(
         data => console.log("user selected to ", data.clicked)
       )

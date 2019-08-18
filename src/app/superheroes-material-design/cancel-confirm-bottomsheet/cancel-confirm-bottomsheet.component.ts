@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { MatBottomSheetRef } from '@angular/material/bottom-sheet';
+import { Component, OnInit, Inject } from '@angular/core';
+import { MatBottomSheetRef, MAT_BOTTOM_SHEET_DATA } from '@angular/material/bottom-sheet';
 
 @Component({
   selector: 'app-cancel-confirm-bottomsheet',
@@ -8,7 +8,12 @@ import { MatBottomSheetRef } from '@angular/material/bottom-sheet';
 })
 export class CancelConfirmBottomsheetComponent implements OnInit {
 
-  constructor(private bottomSheetRef: MatBottomSheetRef) { }
+  message: string;
+
+  constructor(private bottomSheetRef: MatBottomSheetRef,
+      @Inject(MAT_BOTTOM_SHEET_DATA) bottomsheetData:{ message:string}) { 
+        this.message = bottomsheetData.message;
+  }
 
   ngOnInit() {
   }

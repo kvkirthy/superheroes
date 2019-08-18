@@ -20,7 +20,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatGridListModule } from '@angular/material/grid-list';
 // import { MatNativeDateModule } from '@angular/material/core';
 import { MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/dialog';
-import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
+import { MatBottomSheetModule, MAT_BOTTOM_SHEET_DEFAULT_OPTIONS } from '@angular/material/bottom-sheet';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -45,6 +45,7 @@ import { SuperheroGridListComponent } from './superhero-grid-list/superhero-grid
 import { CancelConfirmDialogComponent } from './cancel-confirm-dialog/cancel-confirm-dialog.component';
 import { SoftwareAgreementComponent } from './software-agreement/software-agreement.component';
 import { CancelConfirmBottomsheetComponent } from './cancel-confirm-bottomsheet/cancel-confirm-bottomsheet.component';
+import { ActionsBottomsheetComponent } from './actions-bottomsheet/actions-bottomsheet.component';
 
 @NgModule({
   declarations: [
@@ -65,7 +66,8 @@ import { CancelConfirmBottomsheetComponent } from './cancel-confirm-bottomsheet/
     SuperheroGridListComponent,
     CancelConfirmDialogComponent,
     SoftwareAgreementComponent,
-    CancelConfirmBottomsheetComponent, 
+    CancelConfirmBottomsheetComponent,
+    ActionsBottomsheetComponent, 
   ],
   imports: [
     AppRoutingModule,
@@ -116,11 +118,19 @@ import { CancelConfirmBottomsheetComponent } from './cancel-confirm-bottomsheet/
         hasBackdrop: true,
         disableClose:false
       }
+    },
+    {
+      provide: MAT_BOTTOM_SHEET_DEFAULT_OPTIONS,
+      useValue: {
+        hasBackdrop: false,
+        disableClose: true
+      }
     }
   ],
   entryComponents: [
     CancelConfirmDialogComponent,
     CancelConfirmBottomsheetComponent,
+    ActionsBottomsheetComponent,
     SoftwareAgreementComponent
   ]
 })
