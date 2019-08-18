@@ -8,7 +8,9 @@
     List of Superheroes
     <span class="central-stretchable-space"></span>
     <ng-content></ng-content>
-    <!-- <a class="action">View</a>
-    <a class="action">Create</a> -->
+    
+     <a class="action" (click)="agreementClick()">User Agreement</a>
+     <span *ngIf="fullname">- {{fullname}}</span>
+    <!--<a class="action">Create</a> -->
   </mat-toolbar-row>
 </mat-toolbar>

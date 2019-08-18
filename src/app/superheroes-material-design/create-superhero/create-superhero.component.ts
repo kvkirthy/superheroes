@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatChipEvent } from '@angular/material/chips';
 import { Superhero } from '../models/superhero';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/dialog';
+import { CancelConfirmDialogComponent } from '../cancel-confirm-dialog/cancel-confirm-dialog.component';
 
 @Component({
   selector: 'app-create-superhero',
@@ -11,12 +13,11 @@ export class CreateSuperheroComponent implements OnInit {
 
   superhero: Superhero;
   
-  constructor() { 
+  constructor(private dialog: MatDialog) { 
     this.superhero = new Superhero();
-
   }
   get model(){
-    return JSON.stringify(this.superhero);
+      return JSON.stringify(this.superhero);
   }
   
   ngOnInit() {
@@ -30,6 +31,33 @@ export class CreateSuperheroComponent implements OnInit {
     this.superhero.favFood.splice(this.superhero.favFood.indexOf(item));
   }
 
+  cancelCreate(){
+    // let ref: MatDialogRef<CancelConfirmDialogComponent> 
+    //     = this.dialog.open(CancelConfirmDialogComponent, {
+    //       width: "640px",
+    //       height: "400px",
+    //       data: {
+    //         message: "Create Superhero action attempted to be cancelled"
+    //       },
+    //       disableClose: true,
+    //       hasBackdrop: false
+    //     });
+    
+    let ref: MatDialogRef<CancelConfirmDialogComponent> 
+    = this.dialog.open(CancelConfirmDialogComponent, 
+        { data: 
+          { 
+            message: "Create Superhero action attempted to be cancelled"
+          }
+        });
+    ref.afterClosed().subscribe( (data) => {
+      if(data.clicked === "Ok"){
+        // Reset form here
+      }else if(data.clicked === "Cancel"){
+        // Do nothing. Cancel any events that navigate away from the component.
+      }
+    });
+  }
 
 
 }

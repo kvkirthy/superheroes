@@ -19,6 +19,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatListModule } from '@angular/material/list';
 import { MatGridListModule } from '@angular/material/grid-list';
 // import { MatNativeDateModule } from '@angular/material/core';
+import { MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/dialog';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -40,6 +41,8 @@ import { TabSampleComponent } from './tab-sample/tab-sample.component';
 import { SuperheroesExpandableListComponent } from './superheroes-expandable-list/superheroes-expandable-list.component';
 import { SuperheroNewListComponent } from './superhero-new-list/superhero-new-list.component';
 import { SuperheroGridListComponent } from './superhero-grid-list/superhero-grid-list.component';
+import { CancelConfirmDialogComponent } from './cancel-confirm-dialog/cancel-confirm-dialog.component';
+import { SoftwareAgreementComponent } from './software-agreement/software-agreement.component';
 
 @NgModule({
   declarations: [
@@ -57,7 +60,9 @@ import { SuperheroGridListComponent } from './superhero-grid-list/superhero-grid
     TabSampleComponent,
     SuperheroesExpandableListComponent,
     SuperheroNewListComponent,
-    SuperheroGridListComponent, 
+    SuperheroGridListComponent,
+    CancelConfirmDialogComponent,
+    SoftwareAgreementComponent, 
   ],
   imports: [
     AppRoutingModule,
@@ -82,6 +87,7 @@ import { SuperheroGridListComponent } from './superhero-grid-list/superhero-grid
     MatExpansionModule,
     MatListModule,
     MatGridListModule,
+    MatDialogModule,
 
     ReactiveFormsModule
   ],
@@ -99,6 +105,18 @@ import { SuperheroGridListComponent } from './superhero-grid-list/superhero-grid
     TabSampleComponent,
     SuperheroGridListComponent
   ],
-  providers:[HitCounter]
+  providers:[HitCounter,
+    {
+      provide: MAT_DIALOG_DEFAULT_OPTIONS,
+      useValue: {       
+        hasBackdrop: true,
+        disableClose:false
+      }
+    }
+  ],
+  entryComponents: [
+    CancelConfirmDialogComponent,
+    SoftwareAgreementComponent
+  ]
 })
 export class SuperheroesMaterialDesignModule { }
