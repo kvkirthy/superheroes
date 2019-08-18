@@ -3,6 +3,8 @@ import { MatChipEvent } from '@angular/material/chips';
 import { Superhero } from '../models/superhero';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/dialog';
 import { CancelConfirmDialogComponent } from '../cancel-confirm-dialog/cancel-confirm-dialog.component';
+import { MatBottomSheet } from '@angular/material/bottom-sheet';
+import { CancelConfirmBottomsheetComponent } from '../cancel-confirm-bottomsheet/cancel-confirm-bottomsheet.component';
 
 @Component({
   selector: 'app-create-superhero',
@@ -13,7 +15,9 @@ export class CreateSuperheroComponent implements OnInit {
 
   superhero: Superhero;
   
-  constructor(private dialog: MatDialog) { 
+  constructor(private dialog: MatDialog,
+      private bottomSheet: MatBottomSheet
+    ) { 
     this.superhero = new Superhero();
   }
   get model(){
@@ -43,21 +47,27 @@ export class CreateSuperheroComponent implements OnInit {
     //       hasBackdrop: false
     //     });
     
-    let ref: MatDialogRef<CancelConfirmDialogComponent> 
-    = this.dialog.open(CancelConfirmDialogComponent, 
-        { data: 
-          { 
-            message: "Create Superhero action attempted to be cancelled"
-          }
-        });
-    ref.afterClosed().subscribe( (data) => {
-      if(data.clicked === "Ok"){
-        // Reset form here
-      }else if(data.clicked === "Cancel"){
-        // Do nothing. Cancel any events that navigate away from the component.
-      }
-    });
-  }
+  //   let ref: MatDialogRef<CancelConfirmDialogComponent> 
+  //   = this.dialog.open(CancelConfirmDialogComponent, 
+  //       { data: 
+  //         { 
+  //           message: "Create Superhero action attempted to be cancelled"
+  //         }
+  //       });
+  //   ref.afterClosed().subscribe( (data) => {
+  //     if(data.clicked === "Ok"){
+  //       // Reset form here
+  //     }else if(data.clicked === "Cancel"){
+  //       // Do nothing. Cancel any events that navigate away from the component.
+  //     }
+  //   });
+
+      let ref = this.bottomSheet.open(CancelConfirmBottomsheetComponent);
+      ref.afterDismissed().subscribe(
+        data => console.log("user selected to ", data.clicked)
+      )
+
+   }
 
 
 }

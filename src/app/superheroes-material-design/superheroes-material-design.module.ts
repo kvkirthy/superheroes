@@ -20,6 +20,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatGridListModule } from '@angular/material/grid-list';
 // import { MatNativeDateModule } from '@angular/material/core';
 import { MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/dialog';
+import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -43,6 +44,7 @@ import { SuperheroNewListComponent } from './superhero-new-list/superhero-new-li
 import { SuperheroGridListComponent } from './superhero-grid-list/superhero-grid-list.component';
 import { CancelConfirmDialogComponent } from './cancel-confirm-dialog/cancel-confirm-dialog.component';
 import { SoftwareAgreementComponent } from './software-agreement/software-agreement.component';
+import { CancelConfirmBottomsheetComponent } from './cancel-confirm-bottomsheet/cancel-confirm-bottomsheet.component';
 
 @NgModule({
   declarations: [
@@ -62,7 +64,8 @@ import { SoftwareAgreementComponent } from './software-agreement/software-agreem
     SuperheroNewListComponent,
     SuperheroGridListComponent,
     CancelConfirmDialogComponent,
-    SoftwareAgreementComponent, 
+    SoftwareAgreementComponent,
+    CancelConfirmBottomsheetComponent, 
   ],
   imports: [
     AppRoutingModule,
@@ -88,6 +91,7 @@ import { SoftwareAgreementComponent } from './software-agreement/software-agreem
     MatListModule,
     MatGridListModule,
     MatDialogModule,
+    MatBottomSheetModule,
 
     ReactiveFormsModule
   ],
@@ -116,6 +120,7 @@ import { SoftwareAgreementComponent } from './software-agreement/software-agreem
   ],
   entryComponents: [
     CancelConfirmDialogComponent,
+    CancelConfirmBottomsheetComponent,
     SoftwareAgreementComponent
   ]
 })
