@@ -9,8 +9,13 @@ import { CreateSuperheroComponent } from './superheroes-material-design/create-s
 import { SuperheroesExpandableListComponent } from './superheroes-material-design/superheroes-expandable-list/superheroes-expandable-list.component';
 import { SuperheroNewListComponent } from './superheroes-material-design/superhero-new-list/superhero-new-list.component';
 import { SuperheroGridListComponent } from './superheroes-material-design/superhero-grid-list/superhero-grid-list.component';
+import { HomeComponent } from './superheroes-material-design/home/home.component';
 
 const routes: Routes = [
+  {
+    path:  "superhero-home",
+    component: HomeComponent
+  },
   {
     path: "heroes-accordion",
     component: SuperheroesExpandableListComponent

@@ -46,6 +46,7 @@ import { CancelConfirmDialogComponent } from './cancel-confirm-dialog/cancel-con
 import { SoftwareAgreementComponent } from './software-agreement/software-agreement.component';
 import { CancelConfirmBottomsheetComponent } from './cancel-confirm-bottomsheet/cancel-confirm-bottomsheet.component';
 import { ActionsBottomsheetComponent } from './actions-bottomsheet/actions-bottomsheet.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -67,7 +68,8 @@ import { ActionsBottomsheetComponent } from './actions-bottomsheet/actions-botto
     CancelConfirmDialogComponent,
     SoftwareAgreementComponent,
     CancelConfirmBottomsheetComponent,
-    ActionsBottomsheetComponent, 
+    ActionsBottomsheetComponent,
+    HomeComponent, 
   ],
   imports: [
     AppRoutingModule,
