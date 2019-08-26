@@ -4,45 +4,19 @@ import { SelectionModel } from '@angular/cdk/collections';
 import { MatListOption, MatSelectionListChange } from '@angular/material/list';
 import { MatBottomSheet } from '@angular/material/bottom-sheet';
 import { ActionsBottomsheetComponent } from '../actions-bottomsheet/actions-bottomsheet.component';
+import { SuperheroDataService } from 'src/app/data-services/superhero-data.service';
 
 @Component({
   selector: 'app-superhero-new-list',
   templateUrl: './superhero-new-list.component.html',
-  styleUrls: ['./superhero-new-list.component.css']
+  styleUrls: ['./superhero-new-list.component.css'],
+  providers: [SuperheroDataService]
 })
 export class SuperheroNewListComponent implements OnInit {
 
   @ViewChild("selected") selected: any;
 
-  private heroes: Array<Superhero> = [
-    {
-      name: "Chhotta Bheem",
-      email: "ChhottaBheem@angularsample.com",
-      details: "A hero in Dholakpur village",
-      country: "India",
-      cardImage: "/assets/chhottabheem.png",
-      specialPowers: ["a very strong boy!"],
-      favFood: ["Laddu"]
-    },
-    {
-      name: "Spiderman",
-      email: "spiderman@angularsample.com",
-      details: "A hero in New York city",
-      country: "United States",
-      specialPowers: ["Shoots web"],
-      cardImage: "/assets/spiderman.jpg",
-      favFood: ["Cheese burger"]
-    },
-    {
-      name: "Batman",
-      email: "batman@angularsample.com",
-      details: "A hero in Gotham city",
-      country: "United Kingdom",
-      cardImage: "/assets/batman.png",
-      specialPowers: ["Martial Arts"],
-      favFood: ["Spaghetti"]
-    }
-  ];
+  private heroes: Array<Superhero>;
 
   listItemSelected(data){
     this.bottomsheet.open(ActionsBottomsheetComponent);
@@ -53,9 +27,14 @@ export class SuperheroNewListComponent implements OnInit {
     console.log(event.option.value, event.option.selected);
   }
 
-  constructor(private bottomsheet: MatBottomSheet) { }
+  constructor(private bottomsheet: MatBottomSheet,
+    private heroData: SuperheroDataService) { }
 
   ngOnInit() {
+    this.heroData
+      .getSuperheroes()
+      .subscribe( data => this.heroes = data);
+
   }
 
 }

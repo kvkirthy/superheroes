@@ -47,6 +47,7 @@ import { SoftwareAgreementComponent } from './software-agreement/software-agreem
 import { CancelConfirmBottomsheetComponent } from './cancel-confirm-bottomsheet/cancel-confirm-bottomsheet.component';
 import { ActionsBottomsheetComponent } from './actions-bottomsheet/actions-bottomsheet.component';
 import { HomeComponent } from './home/home.component';
+import { SuperheroDataService } from '../data-services/superhero-data.service';
 
 @NgModule({
   declarations: [
@@ -113,7 +114,7 @@ import { HomeComponent } from './home/home.component';
     TabSampleComponent,
     SuperheroGridListComponent
   ],
-  providers:[HitCounter,
+  providers:[HitCounter,    
     {
       provide: MAT_DIALOG_DEFAULT_OPTIONS,
       useValue: {       
