@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
 import { MatDialogRef, MatDialog } from '@angular/material/dialog';
 import { SoftwareAgreementComponent } from '../software-agreement/software-agreement.component';
 
@@ -9,6 +9,7 @@ import { SoftwareAgreementComponent } from '../software-agreement/software-agree
 })
 export class SuperheroToolbarComponent implements OnInit {
 
+  @Input() showSecondRow = false;
   @Output() menuClick: EventEmitter<boolean> = new EventEmitter();
   toggleValue: boolean=true;
   fullname: string;

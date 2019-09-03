@@ -6,14 +6,16 @@
     </a> -->
 
 </app-superhero-toolbar>
-<router-outlet></router-outlet>
+<!-- <div class="container-padding">
+</div> -->
 <!-- <app-tab-sample>  </app-tab-sample> -->
-<!-- <app-superhero-sidenav-container> -->
+<app-superhero-sidenav-container> 
     <!-- <app-superhero-sidenav #sidenav></app-superhero-sidenav> -->
-    <!-- <app-superhero-sidenav #sidenav position="end"></app-superhero-sidenav> -->
-    <!-- <app-superhero-sidenav-content> -->
-    <!-- </app-superhero-sidenav-content> -->
-<!-- </app-superhero-sidenav-container> -->
+    <app-superhero-sidenav #sidenav position="start"></app-superhero-sidenav> 
+    <app-superhero-sidenav-content>
+        <router-outlet></router-outlet>
+    </app-superhero-sidenav-content>
+</app-superhero-sidenav-container>
 <!-- <app-create-superhero-reactive-form></app-create-superhero-reactive-form> -->
 
 <!-- <app-create-superhero></app-create-superhero> -->
