@@ -16,7 +16,8 @@ export class SuperheroesExpandableListComponent implements OnInit {
       country: "India",
       cardImage: "spiderman.jpg",
       specialPowers: ["is strong"],
-      favFood: ["Laddu"]
+      favFood: ["Laddu"],
+      isExpanded: true,
     },
     {
       name: "Spiderman",
@@ -25,7 +26,8 @@ export class SuperheroesExpandableListComponent implements OnInit {
       country: "United States",
       specialPowers: ["shoots web"],
       cardImage: "spiderman.jpg",
-      favFood: ["Cheese burger"]
+      favFood: ["Cheese burger"],
+      isExpanded: false,
     },
     {
       name: "Batman",
@@ -34,7 +36,9 @@ export class SuperheroesExpandableListComponent implements OnInit {
       country: "United Kingdom",
       cardImage: "spiderman.jpg",
       specialPowers: ["is good at martial arts"],
-      favFood: ["Spaghetti"]
+      favFood: ["Spaghetti"],
+      isExpanded: true,
+
     }
   ];
 

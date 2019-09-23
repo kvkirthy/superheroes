@@ -31,12 +31,17 @@ export class HomeComponent implements OnInit {
 
 
   constructor() { 
-    // let promiseRef: Promise = this.promiseSample(false);
-    // promiseRef.then( 
-    //     (result) => console.log(result), 
-    //     (error) => console.log(error)
-    //     );
-    // promiseRef.catch((error) => console.log(error));
+    let promiseRef: Promise<any> = this.promiseSample(false);
+    promiseRef.then( 
+        (result) => { 
+          console.log(result);
+          // throw new Error("error in success handler");
+        },
+        (error) => {
+          console.log("error handler", error)
+          // throw new Error("error in failure handler");
+        })
+        .catch((error) => console.log("catch", error));
 
     let observableRef: Observable<string> = this.observableSample(true);
     observableRef.subscribe( 
@@ -53,6 +58,7 @@ export class HomeComponent implements OnInit {
       if(input){
         resolve("job well done");
       }else{
+        //throw new Error("exception thrown")
         reject("job failed");
       }
     })

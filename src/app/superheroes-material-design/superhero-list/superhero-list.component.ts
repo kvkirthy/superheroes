@@ -30,8 +30,8 @@ export class SuperheroListComponent implements OnInit {
   constructor(private route: ActivatedRoute,
     private router: Router) { }
 
-  navigateToHeroDetails(heroName){
-    this.router.navigate([`/hero/${heroName}`]);
+  navigateToHeroDetails(heroName: string){
+    this.router.navigate(["/hero", heroName]);
   }
 
   ngOnInit() {

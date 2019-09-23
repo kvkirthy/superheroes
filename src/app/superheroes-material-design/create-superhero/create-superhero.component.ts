@@ -32,7 +32,7 @@ export class CreateSuperheroComponent implements OnInit {
   }
 
   removeHandler(item: string){
-    this.superhero.favFood.splice(this.superhero.favFood.indexOf(item));
+    this.superhero.favFood.splice(this.superhero.favFood.indexOf(item), 1);
   }
 
   cancelCreate(){

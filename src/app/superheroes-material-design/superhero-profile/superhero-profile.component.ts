@@ -68,7 +68,7 @@ export class SuperheroProfileComponent implements OnInit, OnChanges {
   }
 
 
-  constructor(private hitCounter: HitCounter) {
+  constructor(public hitCounter: HitCounter) {
     this.hitCounter.counter;
    }
 
