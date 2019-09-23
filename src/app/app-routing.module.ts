@@ -11,6 +11,7 @@ import { SuperheroNewListComponent } from './superheroes-material-design/superhe
 import { SuperheroGridListComponent } from './superheroes-material-design/superhero-grid-list/superhero-grid-list.component';
 import { HomeComponent } from './superheroes-material-design/home/home.component';
 import { Chapter4Component } from './code-samples/chapter4/chapter4.component';
+import { Chapter5Component } from './code-samples/chapter5/chapter5.component';
 
 let routes: Routes = [
   {
@@ -51,6 +52,10 @@ routes = routes.concat([
   {
     path: "samples/chapter4",
     component: Chapter4Component
+  },
+  {
+    path: "samples/chapter5",
+    component: Chapter5Component
   }
 ]);
 
