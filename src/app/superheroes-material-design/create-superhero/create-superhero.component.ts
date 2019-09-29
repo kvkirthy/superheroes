@@ -36,42 +36,41 @@ export class CreateSuperheroComponent implements OnInit {
   }
 
   cancelCreate(){
-    // let ref: MatDialogRef<CancelConfirmDialogComponent> 
-    //     = this.dialog.open(CancelConfirmDialogComponent, {
-    //       width: "640px",
-    //       height: "400px",
-    //       data: {
-    //         message: "Create Superhero action attempted to be cancelled"
-    //       },
-    //       disableClose: true,
-    //       hasBackdrop: false
-    //     });
-    
-  //   let ref: MatDialogRef<CancelConfirmDialogComponent> 
-  //   = this.dialog.open(CancelConfirmDialogComponent, 
-  //       { data: 
-  //         { 
-  //           message: "Create Superhero action attempted to be cancelled"
-  //         }
-  //       });
-  //   ref.afterClosed().subscribe( (data) => {
-  //     if(data.clicked === "Ok"){
-  //       // Reset form here
-  //     }else if(data.clicked === "Cancel"){
-  //       // Do nothing. Cancel any events that navigate away from the component.
-  //     }
-  //   });
-
-      let ref = this.bottomSheet.open(CancelConfirmBottomsheetComponent,
-        {
+    let ref: MatDialogRef<CancelConfirmDialogComponent> 
+        = this.dialog.open(CancelConfirmDialogComponent, {
+          width: "800px",
+          height: "200px",
           data: {
-          message: "Create Superhero action attempted to be cancelled"
-        }
-      });
+            message: "Create Superhero action attempted to be cancelled"
+          },
+          hasBackdrop: true
+        });
+    
+    // let ref: MatDialogRef<CancelConfirmDialogComponent> 
+    // = this.dialog.open(CancelConfirmDialogComponent, 
+    //     { data: 
+    //       { 
+    //         message: "Create Superhero action attempted to be cancelled"
+    //       }
+    //     });
+    // ref.afterClosed().subscribe( (data) => {
+    //   if(data.clicked === "Ok"){
+    //     // Reset form here
+    //   }else if(data.clicked === "Cancel"){
+    //     // Do nothing. Cancel any events that navigate away from the component.
+    //   }
+    // });
+
+      // let ref = this.bottomSheet.open(CancelConfirmBottomsheetComponent,
+      //   {
+      //     data: {
+      //     message: "Create Superhero action attempted to be cancelled"
+      //   }
+      // });
       
-      ref.afterDismissed().subscribe(
-        data => console.log("user selected to ", data.clicked)
-      )
+      // ref.afterDismissed().subscribe(
+      //   data => console.log("user selected to ", data.clicked)
+      // )
 
    }
 
