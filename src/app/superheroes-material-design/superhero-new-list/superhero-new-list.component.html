@@ -20,7 +20,7 @@
       </mat-action-list>
        -->
 <mat-selection-list #selected (selectionChange)="selectionChangeHandler($event)">
-    <mat-list-option *ngFor="let hero of heroes" [value]="hero.name">
+    <mat-list-option *ngFor="let hero of heroes" [value]="hero.name" >
         <img [src]="hero.cardImage" matListAvatar alt="">
         <a mat-list-item (click)="listItemSelected(hero)">
             {{hero.name}}

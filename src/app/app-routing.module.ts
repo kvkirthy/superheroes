@@ -9,8 +9,14 @@ import { CreateSuperheroComponent } from './superheroes-material-design/create-s
 import { SuperheroesExpandableListComponent } from './superheroes-material-design/superheroes-expandable-list/superheroes-expandable-list.component';
 import { SuperheroNewListComponent } from './superheroes-material-design/superhero-new-list/superhero-new-list.component';
 import { SuperheroGridListComponent } from './superheroes-material-design/superhero-grid-list/superhero-grid-list.component';
+import { HomeComponent } from './superheroes-material-design/home/home.component';
+import { Chapter4Component } from './code-samples/chapter4/chapter4.component';
 
-const routes: Routes = [
+let routes: Routes = [
+  {
+    path: "superhero-home",
+    component: HomeComponent
+  },
   {
     path: "heroes-accordion",
     component: SuperheroesExpandableListComponent
@@ -38,19 +44,26 @@ const routes: Routes = [
   {
     path: "list",
     redirectTo: "/heroes"
-  },
-  {
-    path: "",
-    redirectTo: "/heroes",
-    pathMatch: "full"
-  },
-  {
-    path: "**",
-    component: ErrorPageComponent
   }
-
-
 ];
+
+routes = routes.concat([
+  {
+    path: "samples/chapter4",
+    component: Chapter4Component
+  }
+]);
+
+routes = routes.concat([{
+  path: "",
+  redirectTo: "/heroes",
+  pathMatch: "full"
+},
+{
+  path: "**",
+  component: ErrorPageComponent
+}
+]);
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

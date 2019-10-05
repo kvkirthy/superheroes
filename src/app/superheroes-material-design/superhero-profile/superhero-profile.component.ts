@@ -3,6 +3,7 @@ import HitCounter from "../utilities/hit-counter"
 import SuperheroText from '../utilities/superhero-text';
 
 import  superheroes, {getSuperheroCreators as customName, getSuperheroLocation} from './superhero'
+import { SuperheroDataService } from 'src/app/app-http-calls/superhero-data.service';
 
 export type Superhero = {
   name: string;
@@ -68,11 +69,14 @@ export class SuperheroProfileComponent implements OnInit, OnChanges {
   }
 
 
-  constructor(private hitCounter: HitCounter) {
+  constructor(private hitCounter: HitCounter, private dataService: SuperheroDataService) {
     this.hitCounter.counter;
    }
 
 
+   deleteHero(){
+     this.dataService.deleteHero("001").subscribe((data) => console.log(data));
+   }
 
   ngOnInit() {
   }

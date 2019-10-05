@@ -19,6 +19,8 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatListModule } from '@angular/material/list';
 import { MatGridListModule } from '@angular/material/grid-list';
 // import { MatNativeDateModule } from '@angular/material/core';
+import { MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/dialog';
+import { MatBottomSheetModule, MAT_BOTTOM_SHEET_DEFAULT_OPTIONS } from '@angular/material/bottom-sheet';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -40,6 +42,12 @@ import { TabSampleComponent } from './tab-sample/tab-sample.component';
 import { SuperheroesExpandableListComponent } from './superheroes-expandable-list/superheroes-expandable-list.component';
 import { SuperheroNewListComponent } from './superhero-new-list/superhero-new-list.component';
 import { SuperheroGridListComponent } from './superhero-grid-list/superhero-grid-list.component';
+import { CancelConfirmDialogComponent } from './cancel-confirm-dialog/cancel-confirm-dialog.component';
+import { SoftwareAgreementComponent } from './software-agreement/software-agreement.component';
+import { CancelConfirmBottomsheetComponent } from './cancel-confirm-bottomsheet/cancel-confirm-bottomsheet.component';
+import { ActionsBottomsheetComponent } from './actions-bottomsheet/actions-bottomsheet.component';
+import { HomeComponent } from './home/home.component';
+import { SuperheroDataService } from '../data-services/superhero-data.service';
 
 @NgModule({
   declarations: [
@@ -57,7 +65,12 @@ import { SuperheroGridListComponent } from './superhero-grid-list/superhero-grid
     TabSampleComponent,
     SuperheroesExpandableListComponent,
     SuperheroNewListComponent,
-    SuperheroGridListComponent, 
+    SuperheroGridListComponent,
+    CancelConfirmDialogComponent,
+    SoftwareAgreementComponent,
+    CancelConfirmBottomsheetComponent,
+    ActionsBottomsheetComponent,
+    HomeComponent, 
   ],
   imports: [
     AppRoutingModule,
@@ -82,6 +95,8 @@ import { SuperheroGridListComponent } from './superhero-grid-list/superhero-grid
     MatExpansionModule,
     MatListModule,
     MatGridListModule,
+    MatDialogModule,
+    MatBottomSheetModule,
     ReactiveFormsModule
   ],
   exports: [
@@ -98,6 +113,27 @@ import { SuperheroGridListComponent } from './superhero-grid-list/superhero-grid
     TabSampleComponent,
     SuperheroGridListComponent
   ],
-  providers:[HitCounter]
+  providers:[HitCounter,    
+    {
+      provide: MAT_DIALOG_DEFAULT_OPTIONS,
+      useValue: {       
+        hasBackdrop: true,
+        disableClose:false
+      }
+    },
+    {
+      provide: MAT_BOTTOM_SHEET_DEFAULT_OPTIONS,
+      useValue: {
+        hasBackdrop: false,
+        disableClose: true
+      }
+    }
+  ],
+  entryComponents: [
+    CancelConfirmDialogComponent,
+    CancelConfirmBottomsheetComponent,
+    ActionsBottomsheetComponent,
+    SoftwareAgreementComponent
+  ]
 })
 export class SuperheroesMaterialDesignModule { }

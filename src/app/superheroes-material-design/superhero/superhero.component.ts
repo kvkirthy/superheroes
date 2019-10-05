@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy, } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Superhero } from '../models/superhero';
 import { switchMap} from 'rxjs/operators';
@@ -8,7 +8,7 @@ import { switchMap} from 'rxjs/operators';
   templateUrl: './superhero.component.html',
   styleUrls: ['./superhero.component.css']
 })
-export class SuperheroComponent implements OnInit {
+export class SuperheroComponent implements OnInit, OnDestroy {
 
   hero: Superhero;
   private heroes: Array<Superhero> = [
@@ -50,6 +50,8 @@ export class SuperheroComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.log("ngOnInit Called");
+
     // Using Snpashot
     // let heroNameParam = this.route.snapshot.params.heroName;
     // this.hero = this.heroes.find( i => i.name.toLowerCase() === heroNameParam.toLowerCase());
@@ -64,6 +66,10 @@ export class SuperheroComponent implements OnInit {
         this.hero = this.heroes.find( i => i.name.toLowerCase() === r.heroName.toLowerCase());
       });
 
+   }
+
+   ngOnDestroy(){
+     console.log("ngOnDestory called");
    }
 
 

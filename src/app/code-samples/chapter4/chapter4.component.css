@@ -1,0 +1,28 @@
+.container{
+    padding: 10px;
+}
+
+.sidenav-custom{
+    background-color: linen;
+    width: 200px;
+}
+
+.card{
+    width:60%;
+    margin: 10px;
+}
+
+a:link{
+    margin: 5px 5px 10px 5px;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+    font-size: 9pt;
+    display: block;
+}
+
+.channel-content{
+    height: 100%;
+    padding: 10px;
+}
+

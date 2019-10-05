@@ -1,20 +1,6 @@
 {
   "heroes": [
     {
-      "id": "001",
-      "name": "Spiderman",
-      "email": "spiderman@angularsample.com",
-      "details": "A hero in New York city",
-      "country": "United States",
-      "cardImage": "spiderman.jpg",
-      "specialPowers": [
-        "Shoots web"
-      ],
-      "favFood": [
-        "Cheese burger"
-      ]
-    },
-    {
       "name": "Batman",
       "email": "batman@angularsample.com",
       "details": "A hero in Gotham city",

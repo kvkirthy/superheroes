@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { MatChipEvent } from '@angular/material/chips';
-import { Superhero, Superhero2 } from '../models/superhero';
+import { Superhero } from '../models/superhero';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/dialog';
+import { CancelConfirmDialogComponent } from '../cancel-confirm-dialog/cancel-confirm-dialog.component';
+import { MatBottomSheet } from '@angular/material/bottom-sheet';
+import { CancelConfirmBottomsheetComponent } from '../cancel-confirm-bottomsheet/cancel-confirm-bottomsheet.component';
 import { SuperheroDataService } from 'src/app/app-http-calls/superhero-data.service';
 
 @Component({
@@ -12,12 +16,15 @@ export class CreateSuperheroComponent implements OnInit {
 
   superhero: Superhero;
   
-  constructor(private dataService: SuperheroDataService) { 
+  constructor(private dialog: MatDialog,
+      private bottomSheet: MatBottomSheet,
+      private dataService: SuperheroDataService
+    ) { 
     this.superhero = new Superhero();
-
   }
+  
   get model(){
-    return JSON.stringify(this.superhero);
+      return JSON.stringify(this.superhero);
   }
   
   ngOnInit() {
@@ -31,17 +38,50 @@ export class CreateSuperheroComponent implements OnInit {
     this.superhero.favFood.splice(this.superhero.favFood.indexOf(item));
   }
 
-  submitForm(){
-    // let hero = this.superhero as Superhero2;
-    // hero.id = Math.random();
-    // this.dataService
-    //   .createHero (hero)
-    //   .subscribe(data => console.log(data));
+  cancelCreate(){
+    // let ref: MatDialogRef<CancelConfirmDialogComponent> 
+    //     = this.dialog.open(CancelConfirmDialogComponent, {
+    //       width: "640px",
+    //       height: "400px",
+    //       data: {
+    //         message: "Create Superhero action attempted to be cancelled"
+    //       },
+    //       disableClose: true,
+    //       hasBackdrop: false
+    //     });
+    
+  //   let ref: MatDialogRef<CancelConfirmDialogComponent> 
+  //   = this.dialog.open(CancelConfirmDialogComponent, 
+  //       { data: 
+  //         { 
+  //           message: "Create Superhero action attempted to be cancelled"
+  //         }
+  //       });
+  //   ref.afterClosed().subscribe( (data) => {
+  //     if(data.clicked === "Ok"){
+  //       // Reset form here
+  //     }else if(data.clicked === "Cancel"){
+  //       // Do nothing. Cancel any events that navigate away from the component.
+  //     }
+  //   });
 
-    let hero = this.superhero;
-    this.dataService
-      .updateHero (hero, "0.9247175939551284")
-      .subscribe(data => console.log(data));
-  }
+      let ref = this.bottomSheet.open(CancelConfirmBottomsheetComponent,
+        {
+          data: {
+          message: "Create Superhero action attempted to be cancelled"
+        }
+      });
+      
+      ref.afterDismissed().subscribe(
+        data => console.log("user selected to ", data.clicked)
+      )
+
+   }
+
+  //   let hero = this.superhero;
+  //   this.dataService
+  //     .updateHero (hero, "0.9247175939551284")
+  //     .subscribe(data => console.log(data));
+  // }
 
 }
