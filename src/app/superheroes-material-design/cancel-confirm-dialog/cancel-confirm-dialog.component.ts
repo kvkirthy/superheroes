@@ -16,11 +16,12 @@ export class CancelConfirmDialogComponent implements OnInit {
   }
 
   onOkClick(){
+    //console.log("I do nothing");
     this.dialogRef.close({clicked: "Ok"});
   }
 
   onCancelClick(){
-    this.dialogRef.close();
+    //this.dialogRef.close();
   }
 
   ngOnInit() {

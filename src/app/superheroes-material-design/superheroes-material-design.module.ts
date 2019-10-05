@@ -24,7 +24,7 @@ import { MatBottomSheetModule, MAT_BOTTOM_SHEET_DEFAULT_OPTIONS } from '@angular
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { SuperheroProfileComponent } from './superhero-profile/superhero-profile.component';
 import { SuperheroToolbarComponent } from './superhero-toolbar/superhero-toolbar.component';
 import HitCounter from './utilities/hit-counter';
@@ -74,6 +74,7 @@ import { SuperheroDataService } from '../data-services/superhero-data.service';
   ],
   imports: [
     AppRoutingModule,
+    // NoopAnimationsModule,
     BrowserAnimationsModule, 
     MatSelectModule,
     MatInputModule,
