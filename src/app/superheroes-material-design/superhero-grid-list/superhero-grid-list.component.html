@@ -1,31 +1,34 @@
-<mat-grid-list cols="3" rowHeight="4:3" gutterSize='3px'>
-  <mat-grid-tile [colspan]="i === 0 ? 2 : 1" [rowspan]="i === 0 ? 2 : 1" *ngFor="let hero of heroes; let i=index">
-      <app-superhero-profile 
-      height="30%"
-      [name]="hero.name" 
-      [lives-in]="hero.livesIn" 
-      firstAppearance="2008"
-      [superpowers]="hero.specialPowers"
-      [card-image]="hero.cardImage">
-    </app-superhero-profile>
-  </mat-grid-tile>
-  <mat-grid-tile *ngFor="let hero of heroes">
-      <app-superhero-profile
-      [name]="hero.name" 
-      [lives-in]="hero.livesIn" 
-      firstAppearance="2008"
-      [superpowers]="hero.specialPowers"
-      [card-image]="hero.cardImage">
-    </app-superhero-profile>
-  </mat-grid-tile>
-  <mat-grid-tile *ngFor="let hero of heroes">
-      <app-superhero-profile
-      [name]="hero.name" 
-      [lives-in]="hero.livesIn" 
-      firstAppearance="2008"
-      [superpowers]="hero.specialPowers"
-      [card-image]="hero.cardImage">
-    </app-superhero-profile>
-  </mat-grid-tile>
-  
-</mat-grid-list>
+<div class="grid-list">
+  <mat-grid-list cols="3" rowHeight="4:3" gutterSize='3px'>
+    <mat-grid-tile [colspan]="i === 0 ? 2 : 1" [rowspan]="i === 0 ? 2 : 1" *ngFor="let hero of heroes; let i=index">
+        <app-superhero-profile 
+        height="30%"
+        [name]="hero.name" 
+        [lives-in]="hero.livesIn" 
+        firstAppearance="2008"
+        [superpowers]="hero.specialPowers"
+        [card-image]="hero.cardImage">
+      </app-superhero-profile>
+    </mat-grid-tile>
+    <mat-grid-tile *ngFor="let hero of heroes">
+        <app-superhero-profile
+        [name]="hero.name" 
+        [lives-in]="hero.livesIn" 
+        firstAppearance="2008"
+        [superpowers]="hero.specialPowers"
+        [card-image]="hero.cardImage">
+      </app-superhero-profile>
+    </mat-grid-tile>
+    <mat-grid-tile *ngFor="let hero of heroes">
+        <app-superhero-profile
+        [name]="hero.name" 
+        [lives-in]="hero.livesIn" 
+        firstAppearance="2008"
+        [superpowers]="hero.specialPowers"
+        [card-image]="hero.cardImage">
+      </app-superhero-profile>
+    </mat-grid-tile>
+    
+  </mat-grid-list>
+
+</div>

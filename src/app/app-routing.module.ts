@@ -61,7 +61,7 @@ routes = routes.concat([
 
 routes = routes.concat([{
   path: "",
-  redirectTo: "/heroes",
+  redirectTo: "/heroes-accordion",
   pathMatch: "full"
 },
 {

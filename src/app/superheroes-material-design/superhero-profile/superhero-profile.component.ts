@@ -64,6 +64,7 @@ export class SuperheroProfileComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges){
+
     console.log(changes);
   }
 
@@ -75,6 +76,7 @@ export class SuperheroProfileComponent implements OnInit, OnChanges {
 
 
   ngOnInit() {
+
   }
 
 }

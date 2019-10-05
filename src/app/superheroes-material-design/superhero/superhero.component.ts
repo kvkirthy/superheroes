@@ -50,6 +50,15 @@ export class SuperheroComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
+    function sumOfTwoNumbersInArray(a: [number, number]) { // parameter declared as a tuple
+      return a[0] + a[1];
+    }
+
+    console.log("works " , sumOfTwoNumbersInArray(((): [number, number] => ([2,2]))())); // no error.
+    
+    let foo: [number, number] = [1, 2]; // variable explicitely defined as a tuple
+    console.log("works " , sumOfTwoNumbersInArray(foo)); // no error.
+  // sumOfTwoNumbersInArray(foo); // Error
     console.log("ngOnInit Called");
 
     // Using Snpashot

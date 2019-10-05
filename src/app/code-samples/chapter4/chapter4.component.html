@@ -8,30 +8,24 @@
     </div>
   </mat-sidenav>
   <mat-sidenav-content class="channel-content">
-    <mat-card class="card" *ngIf="snippet===1">
-      <mat-card-header>
-        <mat-card-title>
-          Result
-          <hr>
-        </mat-card-title>
-      </mat-card-header>
-      <h1>Spiderman</h1>
-      <p>
-        Lives in New York. He is a friendly neighbourhood superhero.
-      </p>
-      <div>
-        <strong>Superpowers</strong>
-        <li>
-          Spiderman can shoot web
-        </li>
-        <li>
-          He can fly with the help of the web.
-        </li>
-        <li>
-          He is strong
-        </li>
-      </div>
-    </mat-card>
+    <app-sample-section>
+        <h1>Spiderman</h1>
+        <p>
+          Lives in New York. He is a friendly neighbourhood superhero.
+        </p>
+        <div>
+          <strong>Superpowers</strong>
+          <li>
+            Spiderman can shoot web
+          </li>
+          <li>
+            He can fly with the help of the web.
+          </li>
+          <li>
+            He is strong
+          </li>
+        </div>
+    </app-sample-section>
 
     <mat-card class="card" *ngIf="snippet===1">
       <mat-card-header class="card-header">

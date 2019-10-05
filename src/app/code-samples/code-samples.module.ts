@@ -5,11 +5,14 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { Chapter5Component } from './chapter5/chapter5.component';
+import { SampleSectionComponent } from './sample-section/sample-section.component';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 @NgModule({
-  declarations: [Chapter4Component, Chapter5Component],
+  declarations: [Chapter4Component, Chapter5Component, SampleSectionComponent],
   imports: [
     CommonModule,
+    MatExpansionModule,
     MatSidenavModule,
     MatCardModule,
     MatIconModule
