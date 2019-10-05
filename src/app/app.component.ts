@@ -10,6 +10,7 @@ import { SuperheroSidenavComponent } from './superheroes-material-design/superhe
 })
 export class AppComponent {
   title: string = "Superheroes";
+  switchTabsOrSidenav: boolean;
   @ViewChild("sidenav") sidenav: SuperheroSidenavComponent;
 
   constructor(private router: Router){    
@@ -17,6 +18,10 @@ export class AppComponent {
 
   toggleSidenav(evt: EventEmitter<boolean>){
     evt ? this.sidenav.open() : this.sidenav.close();
+  }
+
+  switchToTabs(value: boolean){
+    this.switchTabsOrSidenav = value;
   }
 
   navigateToCreate(){

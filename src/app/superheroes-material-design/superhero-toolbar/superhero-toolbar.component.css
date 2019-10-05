@@ -11,6 +11,17 @@
     font-size: 20pt;
 }
 
+.icon-padding{
+    padding-top: 10px;
+}
+
 mat-icon{
     cursor: default;
+}
+
+
+.toggle-span{
+    padding-left: 10px;
+    width: 100px;
+    font-size: 9pt;
 }

@@ -1,7 +1,16 @@
 <mat-toolbar color="primary">  
   <mat-toolbar-row>    
+    <div *ngIf="!isTabs" class="icon-padding">
       <mat-icon (click)="toggleForMenuClick()" class="menu">menu</mat-icon>    
+    </div>
     Superheroes
+    <span class="central-stretchable-space"></span>
+    <mat-slide-toggle (change)="toggleSidenav($event)">
+    </mat-slide-toggle>
+    <span class="toggle-span">
+        {{toggleMessage}}
+
+    </span>
   </mat-toolbar-row>
 
   <mat-toolbar-row *ngIf="showSecondRow">
