@@ -98,7 +98,6 @@ import { SuperheroDataService } from '../data-services/superhero-data.service';
     MatGridListModule,
     MatDialogModule,
     MatBottomSheetModule,
-
     ReactiveFormsModule
   ],
   exports: [

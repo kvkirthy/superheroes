@@ -8,3 +8,7 @@ export class Superhero {
     cardImage: string;
     isExpanded?: boolean;
 }
+
+export class Superhero2 extends Superhero{
+    id: number;
+}

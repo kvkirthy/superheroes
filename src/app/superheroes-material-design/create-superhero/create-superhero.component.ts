@@ -5,6 +5,7 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/ma
 import { CancelConfirmDialogComponent } from '../cancel-confirm-dialog/cancel-confirm-dialog.component';
 import { MatBottomSheet } from '@angular/material/bottom-sheet';
 import { CancelConfirmBottomsheetComponent } from '../cancel-confirm-bottomsheet/cancel-confirm-bottomsheet.component';
+import { SuperheroDataService } from 'src/app/app-http-calls/superhero-data.service';
 
 @Component({
   selector: 'app-create-superhero',
@@ -16,10 +17,12 @@ export class CreateSuperheroComponent implements OnInit {
   superhero: Superhero;
   
   constructor(private dialog: MatDialog,
-      private bottomSheet: MatBottomSheet
+      private bottomSheet: MatBottomSheet,
+      private dataService: SuperheroDataService
     ) { 
     this.superhero = new Superhero();
   }
+  
   get model(){
       return JSON.stringify(this.superhero);
   }
@@ -74,5 +77,10 @@ export class CreateSuperheroComponent implements OnInit {
 
    }
 
+  //   let hero = this.superhero;
+  //   this.dataService
+  //     .updateHero (hero, "0.9247175939551284")
+  //     .subscribe(data => console.log(data));
+  // }
 
 }
