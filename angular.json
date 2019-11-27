@@ -13,7 +13,6 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "baseHref": "superheroes/dist/superheroes/",
             "outputPath": "dist/superheroes",
             "index": "src/index.html",
             "main": "src/main.ts",
